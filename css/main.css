@@ -1892,3 +1892,61 @@ body {
     z-index: 30;
     position: relative;
 }
+
+
+/* Keep the header/nav on top */
+
+#nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: transparent;
+    /* or add a backdrop if you want */
+}
+
+
+/* Desktop nav links: never fixed to bottom */
+
+#nav .nav-links {
+    display: flex;
+    /* since we removed the .flex class */
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    position: static !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+
+/* Make sure only the actual mobile menu can overlay */
+
+.mobile-menu,
+.mobile-menu-icon {
+    position: relative;
+    z-index: 60;
+}
+
+
+/* Layers: particles at back, then hero/socials, then nav */
+
+#particles-js {
+    z-index: 0;
+}
+
+.hero,
+.socials,
+.seperator-skew {
+    position: relative;
+    z-index: 1;
+}
+
+#nav {
+    z-index: 50;
+}
