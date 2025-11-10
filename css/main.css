@@ -16,8 +16,10 @@ body {
 }
 
 header nav .nav-container #logo img {
-    max-width: 100%;
-    height: auto;
+    width: 240px;
+    height: 72px;
+    max-width: none;
+    display: block;
 }
 
 .nav-container {
@@ -163,6 +165,18 @@ a {
     color: white;
     background-color: #3b82f6;
     border: 2px solid #3b82f6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.btn-primary:hover {
+    background: #0b63f3;
+    border-color: #0b63f3;
+    color: #fff;
 }
 
 .btn-dark {
@@ -501,8 +515,11 @@ header nav .nav-container #logo {
     z-index: 10;
 }
 
-header nav .nav-container #logo img {
-    width: 220px;
+#logo img {
+    width: 240px;
+    height: 72px;
+    max-width: none;
+    display: block;
 }
 
 header nav .nav-container .nav-links {
@@ -521,6 +538,7 @@ header nav .nav-container .nav-links a {
     text-decoration: none;
     letter-spacing: 2px;
     color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav .nav-container .nav-links .link::after {
@@ -537,6 +555,11 @@ header nav .nav-container .nav-links .link::after {
 
 header nav .nav-container .nav-links .link:hover::after {
     width: 100%;
+}
+
+header nav .nav-container .nav-links .link:hover {
+    color: #60a5fa;
+    transform: translateY(-2px);
 }
 
 header nav .mobile-menu {
@@ -623,6 +646,7 @@ header .hero {
     left: auto;
     transform: none;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 header .hero h1,
@@ -659,6 +683,26 @@ header .hero .hero-btns {
     margin-top: 1rem;
 }
 
+header .hero h1 {
+    transition: text-shadow 0.3s ease;
+}
+
+header .hero .main-font.text-blue {
+    transition: color 0.3s ease;
+}
+
+header .hero:hover {
+    transform: translateY(-6px);
+}
+
+header .hero:hover h1 {
+    text-shadow: 0 10px 32px rgba(59, 130, 246, 0.45);
+}
+
+header .hero:hover .main-font.text-blue {
+    color: #60a5fa;
+}
+
 header .socials {
     position: relative;
     left: auto;
@@ -683,7 +727,7 @@ header .socials ul li {
     border-radius: 8px;
     width: auto;
     font-size: 1.5rem;
-    transition: 0.3s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 header .socials ul li a {
@@ -702,7 +746,9 @@ header .socials ul li a i {
 }
 
 header .socials ul li:hover {
-    transform: none;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
 }
 
 header .scroll-btn-container {
@@ -1316,7 +1362,223 @@ header .seperator-skew svg .fill-white {
 }
 
 .footer .footer-flex #logo-footer {
-    width: 200px;
+    width: 240px;
+    height: 72px;
+    object-fit: contain;
+}
+
+
+/* ===== Responsive tweaks ===== */
+
+@media (max-width: 1024px) {
+    :root {
+        --nav-h: 88px;
+    }
+    header nav .nav-container {
+        padding: 8px 20px;
+    }
+    header nav .nav-container #logo img,
+    #logo img,
+    .footer .footer-flex #logo-footer {
+        width: 210px;
+        height: 64px;
+    }
+    header .hero {
+        padding: clamp(32px, 8vw, 72px) 20px 32px !important;
+    }
+    header .hero p {
+        font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    }
+    .project-row {
+        gap: 20px;
+    }
+    .skills .skills-icons {
+        gap: 16px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-h: 72px;
+    }
+    header nav .nav-container {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+    header nav .nav-container .nav-links {
+        display: none !important;
+    }
+    .mobile-menu-icon,
+    header nav .mobile-menu {
+        display: none !important;
+    }
+    header nav .nav-container #logo img,
+    #logo img,
+    .footer .footer-flex #logo-footer {
+        width: 200px;
+        height: 62px;
+    }
+    header .hero {
+        padding: 60px 18px 36px !important;
+        width: 100%;
+    }
+    header .hero:hover {
+        transform: none;
+    }
+    header .hero:hover h1 {
+        text-shadow: none;
+    }
+    header .hero h1 {
+        font-size: clamp(1.8rem, 7.5vw, 2.3rem);
+        white-space: normal;
+    }
+    header .hero p {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        margin-top: 10px;
+    }
+    header .hero .hero-btns {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 1.5rem;
+    }
+    .btn,
+    .btn-blue,
+    .btn-dark,
+    .btn-blue-outline {
+        width: 100%;
+        text-align: center;
+    }
+    header .socials ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    header .socials ul li {
+        justify-content: center;
+        font-size: 1.2rem;
+        padding: 10px 14px;
+    }
+    .projects {
+        padding: 2.5rem 0;
+    }
+    .projects .project-row {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+        gap: 24px;
+    }
+    .projects .project-row .project-left,
+    .projects .project-row .project-right {
+        width: 100%;
+    }
+    .projects .project-row .project-left img {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    .projects .project-row .project-right {
+        align-items: flex-start;
+    }
+    .projects .project-row .project-right p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    .projects .project-row .project-right .project-links {
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .skills .container {
+        padding: 3rem 1.25rem;
+    }
+    .skills .skills-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 24px;
+    }
+    .skills .skills-icons li {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin: 0.4rem 0.5rem;
+        font-size: 0.95rem;
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        width: auto;
+    }
+    .contact form {
+        padding: 1.5rem;
+    }
+    .footer .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav .nav-container {
+        padding: 10px 12px;
+    }
+    header nav .nav-container #logo img,
+    #logo img,
+    .footer .footer-flex #logo-footer {
+        width: 180px;
+        height: 56px;
+    }
+    header .hero {
+        padding: 64px 14px 28px !important;
+    }
+    header .hero h1 {
+        font-size: clamp(1.6rem, 9vw, 1.9rem);
+    }
+    header .hero p {
+        font-size: 0.95rem;
+    }
+    header .socials ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    header .socials ul li {
+        width: 100%;
+    }
+    .btn,
+    .btn-blue,
+    .btn-dark,
+    .btn-blue-outline {
+        width: 100%;
+        text-align: center;
+    }
+    .skills .skills-icons li {
+        font-size: 0.9rem;
+    }
+    .skills .skills-icons .iconify {
+        font-size: 30px;
+    }
+    .skills .skills-icons svg {
+        width: 32px;
+        height: 32px;
+    }
+    .contact .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact form {
+        padding: 1.25rem;
+    }
 }
 
 .footer .footer-flex .top-scroll-button {
@@ -1371,6 +1633,12 @@ header .seperator-skew svg .fill-white {
     }
 }
 
+@media (max-width: 768px) {
+    #backToTopBtn {
+        display: none !important;
+    }
+}
+
 
 /* ===== Skills: sizing & readability tweaks ===== */
 
@@ -1385,6 +1653,233 @@ header .seperator-skew svg .fill-white {
     text-align: center;
     margin-bottom: 2rem;
     /* un peu moins d’air pour rapprocher des icônes */
+}
+
+
+/* ==== Mobile polish overrides (final) ==== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        overflow-x: hidden;
+    }
+    header {
+        min-height: auto;
+    }
+    #nav {
+        padding: 6px 0;
+        background: rgba(24, 26, 27, 0.85);
+        backdrop-filter: blur(10px);
+    }
+    header nav .nav-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 16px 12px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    header nav .nav-container #logo img,
+    #logo img {
+        width: 210px;
+        height: 64px;
+    }
+    .mobile-menu {
+        display: block !important;
+        width: 100%;
+        padding: 12px 0;
+        margin: 0;
+    }
+    header nav .mobile-menu .container {
+        padding: 0 16px;
+    }
+    header nav .mobile-menu .mobile-menu-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+        width: 100%;
+    }
+    header nav .mobile-menu .mobile-menu-links ul li {
+        width: 100%;
+    }
+    header nav .mobile-menu .mobile-menu-links ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 8px;
+        border: 1px solid rgba(59, 130, 246, 0.35);
+        background: rgba(24, 26, 27, 0.65);
+        color: #fff;
+        font-size: 1.05rem;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+    header nav .mobile-menu .mobile-menu-links ul li a:hover {
+        background: rgba(59, 130, 246, 0.18);
+        transform: translateY(-2px);
+    }
+    header .hero {
+        width: 100%;
+        padding: 60px 18px 36px !important;
+    }
+    header .hero h1 {
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+        white-space: normal;
+    }
+    header .hero p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    header .hero .hero-btns {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        margin-top: 18px;
+    }
+    .btn,
+    .btn-blue,
+    .btn-dark,
+    .btn-blue-outline {
+        width: 100%;
+        text-align: center;
+    }
+    header .socials ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    header .socials ul li {
+        font-size: 1.1rem;
+        padding: 10px 16px;
+    }
+    .projects {
+        padding: 2.5rem 0;
+    }
+    .projects .project-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        text-align: left;
+    }
+    .projects .project-row .project-left,
+    .projects .project-row .project-right {
+        width: 100%;
+    }
+    .projects .project-row .project-left img {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    .projects .project-row .project-right {
+        align-items: flex-start;
+    }
+    .projects .project-row .project-right p {
+        text-align: left;
+        font-size: 1rem;
+    }
+    .projects .project-row .project-right .project-links {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .skills .container {
+        padding: 3rem 1.25rem;
+    }
+    .skills .skills-icons {
+        gap: 14px 18px;
+    }
+    .skills .skills-icons li {
+        margin: 0.4rem 0.6rem;
+        font-size: 0.95rem;
+    }
+    .education .container {
+        padding: 0 1.25rem;
+    }
+    .education .container .education-card,
+    .education .container .professional-experience {
+        padding: 28px 22px;
+        text-align: left;
+    }
+    .contact .card-container {
+        flex-direction: column;
+        gap: 18px;
+        align-items: stretch;
+    }
+    .contact form {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .footer .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        text-align: center;
+    }
+    .footer .footer-flex #logo-footer {
+        width: 210px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav .nav-container #logo img,
+    #logo img {
+        width: 180px;
+        height: 56px;
+    }
+    header .hero {
+        padding: 64px 14px 28px !important;
+    }
+    header .hero h1 {
+        font-size: clamp(1.6rem, 9vw, 1.9rem);
+    }
+    header .hero p {
+        font-size: 0.95rem;
+    }
+    header .socials ul li {
+        width: 100%;
+        justify-content: center;
+    }
+    .projects .project-row {
+        gap: 18px;
+    }
+    .projects .project-row .project-right h3 {
+        font-size: 1.15rem;
+    }
+    .projects .project-row .project-right p {
+        font-size: 0.95rem;
+    }
+    .skills .skills-icons {
+        justify-content: center;
+        gap: 12px 20px;
+    }
+    .skills .skills-icons li {
+        font-size: 0.9rem;
+        margin: 0.35rem 0.4rem;
+        max-width: none;
+        width: auto;
+    }
+    .skills .skills-icons {
+        grid-template-columns: 1fr;
+        justify-items: stretch;
+    }
+    .skills .skills-icons .iconify {
+        font-size: 30px;
+    }
+    .skills .skills-icons svg {
+        width: 30px;
+        height: 30px;
+    }
+    .education .container .education-card,
+    .education .container .professional-experience {
+        padding: 24px 18px;
+    }
+    .contact form {
+        padding: 1.25rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1609,7 +2104,10 @@ header .seperator-skew svg .fill-white {
 }
 
 #logo img {
-    height: 44px;
+    width: 240px;
+    height: 72px;
+    max-width: none;
+    display: block;
     /* consistent height */
 }
 
@@ -1701,7 +2199,8 @@ body {
 }
 
 #logo img {
-    height: 44px;
+    width: 240px;
+    height: 72px;
 }
 
 .hero {
@@ -2036,39 +2535,39 @@ body{ padding-top: 72px; }  // décale le contenu pour ne pas passer sous la bar
 /* --- NAV fixée en haut, sans casser le reste --- */
 
 :root {
-    --nav-h: 64px;
+    --nav-h: 96px;
 }
 
 
 /* hauteur de la barre */
 
 #nav {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative !important;
+    top: auto;
+    left: auto;
+    right: auto;
     z-index: 1000;
     background: rgba(24, 26, 27, .65);
     backdrop-filter: blur(6px);
 }
 
 .nav-container {
-    height: var(--nav-h);
+    min-height: var(--nav-h);
     align-items: center;
 }
 
 
-/* Le header se décale sous la nav */
+/* Le header garde une marge douce en haut */
 
 #header {
-    padding-top: calc(var(--nav-h) + 16px) !important;
+    padding-top: 0 !important;
 }
 
 
-/* Ta hero reprend un padding normal (pas besoin d’un gros padding-top) */
+/* Ta hero ressort avec un padding confortable */
 
 .hero {
-    padding: 32px 16px 32px !important;
+    padding: clamp(32px, 6vw, 96px) 16px 32px !important;
 }
 
 
