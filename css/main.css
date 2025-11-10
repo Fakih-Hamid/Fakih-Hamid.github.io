@@ -647,11 +647,13 @@ header .hero {
     transform: none;
     text-align: center;
     transition: transform 0.3s ease;
+    pointer-events: none;
 }
 
 header .hero h1,
 header .hero p {
     color: white;
+    pointer-events: auto;
 }
 
 header .hero h1,
@@ -681,6 +683,11 @@ header .hero .hero-btns {
     white-space: nowrap;
     text-align: center;
     margin-top: 1rem;
+    pointer-events: auto;
+}
+
+header .hero * {
+    pointer-events: auto;
 }
 
 header .hero h1 {
@@ -2076,7 +2083,7 @@ header .seperator-skew svg .fill-white {
     position: absolute;
     inset: 0;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 #particles-js canvas {
@@ -2172,7 +2179,7 @@ body {
     position: absolute;
     inset: 0;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 #particles-js canvas {
@@ -2307,7 +2314,7 @@ body {
     position: absolute;
     inset: 0;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 #particles-js canvas {
@@ -2502,7 +2509,7 @@ body{ padding-top: 72px; }  // décale le contenu pour ne pas passer sous la bar
     position: absolute;
     inset: 0;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .hero,
