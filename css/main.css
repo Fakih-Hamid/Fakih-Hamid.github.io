@@ -1854,3 +1854,66 @@ html {
     display: flex;
     align-items: center;
 }
+
+
+/* Header & Particles containment */
+
+#header {
+    position: relative;
+    overflow: hidden;
+    /* empêche la canvas de déborder */
+}
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0 */
+    z-index: 0;
+    overflow: hidden;
+}
+
+#particles-js canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    pointer-events: none;
+    /* pas de clics captés par la canvas */
+}
+
+
+/* Tout le reste du header au-dessus des particules */
+
+#header>nav,
+#header .hero,
+#header .socials,
+#header .seperator-skew {
+    position: relative;
+    z-index: 1;
+}
+
+#header {
+    position: relative;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#particles-js canvas {
+    width: 100%!important;
+    height: 100%!important;
+    display: block;
+    pointer-events: none;
+}
+
+#header>nav,
+#header .hero,
+#header .socials,
+#header .seperator-skew {
+    position: relative;
+    z-index: 1;
+}
