@@ -10,28 +10,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Alfa Slab One font -->
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600;700;800;900&display=swap">
 
-
-    <!-- Font icons -->
+    <!-- Icons & libs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="icon" href="img/favicon.png" type="image/png">
-
-    <!-- Animation library styles -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- Iconify Icons -->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
+    <!-- Your CSS -->
     <link rel="stylesheet" href="css/main.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBYB5MK388"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -40,14 +32,14 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-EBYB5MK388');
     </script>
 </head>
 
 <body>
+    <!-- HEADER -->
     <header id="header">
-        <!-- Only background particles -->
+        <!-- Particles background only -->
         <div id="particles-js"></div>
 
         <!-- NAV -->
@@ -88,7 +80,8 @@
             <div data-aos="fade-up">
                 <h1 class="h1">Hi 👋, I'm <span class="main-font text-blue">Hamid</span></h1>
                 <p class="student" id="student">
-                    I'm deeply fascinated by everything IT, from the way systems connect to how they stay secure...
+                    I'm deeply fascinated by everything IT, from the way systems connect to how they stay secure. I constantly explore, learn, and push boundaries. My goal is to make a meaningful impact in cybersecurity and AI transforming my passion into innovation and
+                    expertise.
                 </p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn-blue"><i class="fas fa-code"></i> Projects</a>
@@ -120,353 +113,263 @@
             </ul>
         </div>
 
-        <!-- separator -->
+        <!-- Separator -->
         <div class="seperator-skew">
             <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-    </svg>
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
         </div>
     </header>
 
-    <!-- HERO -->
-    <div class="hero">
-        <div data-aos="fade-up">
-            <h1 class="h1">
-
-                Hi 👋, I'm <span class="main-font text-blue">Hamid</span>
-            </h1>
-            <p class="student" id="student">
-                I'm deeply fascinated by everything IT, from the way systems connect to how they stay secure. I constantly explore, learn, and push boundaries. My goal is to make a meaningful impact in cybersecurity and AI transforming my passion into innovation and
-                expertise.
-            </p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn-blue"><i class="fas fa-code"></i> Projects</a>
-                <a href="https://github.com/Fakih-Hamid" class="btn-blue-outline mx-1" id="projects-btn" target="_blank"><i class="fab fa-github"></i> Github</a
-              >
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="project-row" data-aos="fade-up">
+            <div class="project-left">
+                <img src="img/Game security API tool.png" alt="Game Security API">
             </div>
-          </div>
-        </div>
-
-        <!-- SOCIAL LINKS -->
-        <div class="socials" data-aos="fade-in"> 
-          <ul>
-            <li class="bg-blue"><a href="https://www.linkedin.com/in/fakih-hamid/?locale=en_US"
-              target="_blank"><span class="socials-text">LinkedIn</span> <i class="fab fa-linkedin fa-2x"></i
-            ></a></li>
-                <li class="bg-dark-grey"> <a href="https://github.com/Fakih-Hamid" target="_blank"><span class="socials-text">GitHub</span><i class="fab fa-github fa-2x"></i
-            ></a></li>
-                <li class="bg-white"><a class="text-dark-grey" href="mailto:fakih-hamid@proton.me"><span class="socials-text">Email</span><i class="fas fa-envelope fa-2x"></i></a></li>
+            <div class="project-right">
+                <h3>Game Security API</h3>
+                <ul class="tech-stack-list" style="display:flex; flex-wrap:wrap; align-items:center;">
+                    <p class="text-grey"><b>Made with:</b></p>
+                    <li><span class="iconify" data-icon="logos:python" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:flask" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:docker-icon" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:sqlite" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:jwt" data-inline="false"></span></li>
                 </ul>
+                <p>
+                    RESTful Flask API for anti-cheat telemetry and risk scoring. Designed to ingest gameplay logs, detect anomalies, and surface actionable insights through secured endpoints.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Fakih-Hamid/Game-Security-API-mini-project" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View on GitHub
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="seperator-skew">
-            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
+        <div class="project-row" data-aos="fade-up">
+            <div class="project-left">
+                <img src="img/Security C++ tool.png" alt="Game Security Tool">
+            </div>
+            <div class="project-right">
+                <h3>C++ Security Tool (Windows)</h3>
+                <ul class="tech-stack-list">
+                    <p class="text-grey"><b>Made with: </b></p>
+                    <li><span class="iconify" data-icon="logos:c-plusplus" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="simple-icons:cmake" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:microsoft-windows" data-inline="false"></span></li>
+                </ul>
+                <p>
+                    Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20. Includes console UI, heuristic signals, and GoogleTest suites.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Fakih-Hamid/Security-tool" class="btn-blue-outline btn-small mx-1" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
         </div>
 
-        </header>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="projects">
-            <div class="project-row" data-aos="fade-up">
-                <div class="project-left">
-                    <img src="img/Game security API tool.png" alt="Game Security API">
-                </div>
-
-                <div class="project-right">
-                    <h3>Game Security API</h3>
-                    <ul class="tech-stack-list" style="display: flex; flex-wrap: wrap; align-items: center;">
-                        <p class="text-grey"><b>Made with:</b></p>
-                        <li><span class="iconify" data-icon="logos:python" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:flask" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:docker-icon" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:sqlite" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:jwt" data-inline="false"></span></li>
-                    </ul>
-
-                    <p>
-                        RESTful Flask API for anti-cheat telemetry and risk scoring. Designed to ingest gameplay logs, detect anomalies, and surface actionable insights through secured endpoints.
-                    </p>
-
-                    <div class="project-links">
-                        <a href="https://github.com/Fakih-Hamid/Game-Security-API-mini-project" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View on GitHub
-                        </a>
-                    </div>
+        <div class="project-row" data-aos="fade-up">
+            <div class="project-left">
+                <img src="/img/DataMining.PNG" alt="Data Mining">
+            </div>
+            <div class="project-right">
+                <h3>Data Mining project</h3>
+                <ul class="tech-stack-list">
+                    <p class="text-grey"><b>Made with: </b></p>
+                    <li><span class="iconify" data-icon="logos:python" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:jupyter" data-inline="false"></span></li>
+                </ul>
+                <p>
+                    Data mining's profound impact on the Esports industry, particularly in Esport online video games like Overwatch. Extract actionable insights from gameplay patterns, player behaviors, and performance metrics.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Fakih-Hamid/Data-Mining-Project" class="btn-blue-outline btn-small" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
                 </div>
             </div>
-
-
-
-            <div class="project-row" data-aos="fade-up">
-                <div class="project-left">
-                    <img src="img/Security C++ tool.png" alt="Game Security Tool">
-                </div>
-
-                <div class="project-right">
-                    <h3>C++ Security Tool (Windows)</h3>
-
-                    <ul class="tech-stack-list">
-                        <p class="text-grey"><b>Made with: </b></p>
-                        <li><span class="iconify" data-icon="logos:c-plusplus" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="simple-icons:cmake" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:microsoft-windows" data-inline="false"></span></li>
-                    </ul>
-
-                    <p>
-                        Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20. Includes console UI, heuristic signals, and GoogleTest suites.
-                    </p>
-
-                    <div class="project-links">
-                        <a href="https://github.com/Fakih-Hamid/Security-tool" class="btn-blue-outline btn-small mx-1" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="project-row" data-aos="fade-up">
-                <div class="project-left">
-                    <img src="/img/DataMining.PNG" alt="">
-                </div>
-                <div class="project-right">
-                    <h3>Data Mining project</h3>
-                    <ul class="tech-stack-list">
-                        <p class="text-grey"><b>Made with: </b></p>
-                        <li><span class="iconify" data-icon="logos:python" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:jupyter" data-inline="false"></span></li>
-                    </ul>
-                    <p>Data mining's profound impact on the Esports industry, particularly in the context of Esport online video games like Overwatch. This project illuminates the pivotal role of Data Mining in extracting actionable insights from gameplay
-                        patterns, player behaviors, and performance metrics. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/Fakih-Hamid/Data-Mining-Project" class="btn-blue-outline btn-small" target="_blank"> <i class="fab fa-github"></i
-                > Code</a>
-            </div>
-          </div>
         </div>
 
-     <div class="project-row" data-aos="fade-up">
-  <div class="project-left">
-    <img src="img/Overwatch cheat detection .png" alt="Overwatch Cheat Detection">
-  </div>
-
-  <div class="project-right">
-    <h3>Overwatch Cheat Detection</h3>
-
-    <ul class="tech-stack-list">
-      <p class="text-grey"><b>Made with: </b></p>
-      <li><span class="iconify" data-icon="logos:python" data-inline="false"></span></li>
-      <li><span class="iconify" data-icon="logos:jupyter" data-inline="false"></span></li>
-      <li><span class="iconify" data-icon="logos:streamlit" data-inline="false"></span></li>
-      <li><span class="iconify" data-icon="logos:pandas" data-inline="false"></span></li>
-    </ul>
-
-    <p>
-      End-to-end cheat detection pipeline using synthetic Overwatch telemetry.
-      Combines statistical analysis, behavioral clustering, and ML models (Isolation Forest + Random Forest)
-      to identify aimbots, wallhacks, triggerbots, and smurf accounts.
-    </p>
-
-    <div class="project-links">
-      <a href="https://github.com/Fakih-Hamid/Overwatch-Cheat-Detection"
-         class="btn-blue-outline btn-small mx-1" target="_blank">
-        <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
+        <div class="project-row" data-aos="fade-up">
+            <div class="project-left">
+                <img src="img/Overwatch cheat detection .png" alt="Overwatch Cheat Detection">
+            </div>
+            <div class="project-right">
+                <h3>Overwatch Cheat Detection</h3>
+                <ul class="tech-stack-list">
+                    <p class="text-grey"><b>Made with: </b></p>
+                    <li><span class="iconify" data-icon="logos:python" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:jupyter" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:streamlit" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:pandas" data-inline="false"></span></li>
+                </ul>
+                <p>
+                    End-to-end cheat detection pipeline using synthetic Overwatch telemetry. Combines statistical analysis, behavioral clustering, and ML models (Isolation Forest + Random Forest).
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Fakih-Hamid/Overwatch-Cheat-Detection" class="btn-blue-outline btn-small mx-1" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
                 </div>
             </div>
+        </div>
 
-
-
-
-
-
-            <div class="project-row" data-aos="fade-up">
-                <div class="project-left">
-                    <img src="img/React Security Dashboard.png" alt="Sentinel Security Dashboard">
-                </div>
-                <div class="project-right">
-                    <h3>Sentinel Security Dashboard</h3>
-
-                    <ul class="tech-stack-list">
-                        <p class="text-grey"><b>Made with: </b></p>
-                        <li><span class="iconify" data-icon="logos:react" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:vitejs" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:typescript-icon" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:material-ui" data-inline="false"></span></li>
-                        <li><span class="iconify" data-icon="logos:docker-icon" data-inline="false"></span></li>
-                    </ul>
-
-                    <p>
-                        Interactive front-end dashboard simulating a live security monitoring. Built with React, Vite, and TypeScript, featuring real-time WebSocket alerts, analytics charts, player risk profiles, dark/light modes, and mock API fallback for offline demos.
-                    </p>
-
-                    <div class="project-links">
-                        <a href="https://github.com/Fakih-Hamid/sentinel-security-dashboard" class="btn-blue-outline btn-small mx-1" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
+        <div class="project-row" data-aos="fade-up">
+            <div class="project-left">
+                <img src="img/React Security Dashboard.png" alt="Sentinel Security Dashboard">
+            </div>
+            <div class="project-right">
+                <h3>Sentinel Security Dashboard</h3>
+                <ul class="tech-stack-list">
+                    <p class="text-grey"><b>Made with: </b></p>
+                    <li><span class="iconify" data-icon="logos:react" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:vitejs" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:typescript-icon" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:material-ui" data-inline="false"></span></li>
+                    <li><span class="iconify" data-icon="logos:docker-icon" data-inline="false"></span></li>
+                </ul>
+                <p>
+                    Interactive front-end dashboard simulating live security monitoring: WebSocket alerts, analytics charts, player risk profiles, dark/light modes, mock API fallback for offline demos.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Fakih-Hamid/sentinel-security-dashboard" class="btn-blue-outline btn-small mx-1" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
                 </div>
             </div>
-
-
-    </div>
-    </div>
-    </div>
+        </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="skills">
         <div class="seperator-skew-top">
-            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
         </div>
+
         <div class="container" data-aos="fade-in">
             <h2 class="text-white main-font">Technical <span class="text-blue main-font">Skills</span></h2>
             <ul class="skills-icons">
                 <!-- Programming & Cybersecurity Languages -->
-                <li><span class="iconify" data-icon="logos:python" data-inline="false"></span><span>Python</span></li>
-                <li><span class="iconify" data-icon="logos:c" data-inline="false"></span><span>C</span></li>
-                <li><span class="iconify" data-icon="logos:c-plusplus" data-inline="false"></span><span>C++</span></li>
-                <li><span class="iconify" data-icon="logos:c-sharp" data-inline="false"></span><span>C#</span></li>
-                <li><span class="iconify" data-icon="logos:java" data-inline="false"></span><span>Java</span></li>
-                <li><span class="iconify" data-icon="logos:javascript" data-inline="false"></span><span>JavaScript</span></li>
+                <li><span class="iconify" data-icon="logos:python"></span><span>Python</span></li>
+                <li><span class="iconify" data-icon="logos:c"></span><span>C</span></li>
+                <li><span class="iconify" data-icon="logos:c-plusplus"></span><span>C++</span></li>
+                <li><span class="iconify" data-icon="logos:c-sharp"></span><span>C#</span></li>
+                <li><span class="iconify" data-icon="logos:java"></span><span>Java</span></li>
+                <li><span class="iconify" data-icon="logos:javascript"></span><span>JavaScript</span></li>
 
-                <!-- AI/ML Frameworks -->
-                <li><span class="iconify" data-icon="logos:pytorch" data-inline="false"></span><span>PyTorch</span></li>
-                <li><span class="iconify" data-icon="simple-icons:scikitlearn" data-inline="false"></span><span>scikit-learn</span></li>
-                <li><span class="iconify" data-icon="simple-icons:pandas" data-inline="false"></span><span>Pandas</span></li>
+                <!-- AI/ML -->
+                <li><span class="iconify" data-icon="logos:pytorch"></span><span>PyTorch</span></li>
+                <li><span class="iconify" data-icon="simple-icons:scikitlearn"></span><span>scikit-learn</span></li>
+                <li><span class="iconify" data-icon="simple-icons:pandas"></span><span>Pandas</span></li>
 
-                <!-- Cybersecurity Tools -->
-                <li><span class="iconify" data-icon="simple-icons:wireshark" data-inline="false"></span><span>Wireshark</span></li>
-                <li><span class="iconify" data-icon="simple-icons:burpsuite" data-inline="false"></span><span>Burp Suite</span></li>
-                <li><span class="iconify" data-icon="logos:docker-icon" data-inline="false"></span><span>Docker</span></li>
+                <!-- Security & DevOps -->
+                <li><span class="iconify" data-icon="simple-icons:wireshark"></span><span>Wireshark</span></li>
+                <li><span class="iconify" data-icon="simple-icons:burpsuite"></span><span>Burp Suite</span></li>
+                <li><span class="iconify" data-icon="logos:docker-icon"></span><span>Docker</span></li>
 
-                <!-- Development Frameworks -->
-                <li><span class="iconify" data-icon="logos:flask" data-inline="false"></span><span>Flask</span></li>
-                <li><span class="iconify" data-icon="logos:react" data-inline="false"></span><span>React</span></li>
-                <li><span class="iconify" data-icon="logos:nodejs-icon" data-inline="false"></span><span>Node.js</span></li>
-                <li><span class="iconify" data-icon="logos:vue" data-inline="false"></span><span>Vue</span></li>
+                <!-- Frameworks -->
+                <li><span class="iconify" data-icon="logos:flask"></span><span>Flask</span></li>
+                <li><span class="iconify" data-icon="logos:react"></span><span>React</span></li>
+                <li><span class="iconify" data-icon="logos:nodejs-icon"></span><span>Node.js</span></li>
+                <li><span class="iconify" data-icon="logos:vue"></span><span>Vue</span></li>
 
-                <!-- Cloud & Infrastructure -->
-                <li><span class="iconify" data-icon="logos:aws" data-inline="false"></span><span>AWS</span></li>
-                <li><span class="iconify" data-icon="flat-color-icons:linux" data-inline="false"></span><span>Linux</span></li>
-                <li><span class="iconify" data-icon="logos:mysql" data-inline="false"></span><span>SQL</span></li>
-                <li><span class="iconify" data-icon="logos:git-icon" data-inline="false"></span><span>Git</span></li>
+                <!-- Infra & Tools -->
+                <li><span class="iconify" data-icon="logos:aws"></span><span>AWS</span></li>
+                <li><span class="iconify" data-icon="flat-color-icons:linux"></span><span>Linux</span></li>
+                <li><span class="iconify" data-icon="logos:mysql"></span><span>SQL</span></li>
+                <li><span class="iconify" data-icon="logos:git-icon"></span><span>Git</span></li>
 
-                <!-- Web Technologies -->
-                <li><span class="iconify" data-icon="vscode-icons:file-type-html" data-inline="false"></span><span>HTML</span></li>
-                <li><span class="iconify" data-icon="vscode-icons:file-type-css" data-inline="false"></span><span>CSS</span></li>
+                <!-- Web -->
+                <li><span class="iconify" data-icon="vscode-icons:file-type-html"></span><span>HTML</span></li>
+                <li><span class="iconify" data-icon="vscode-icons:file-type-css"></span><span>CSS</span></li>
             </ul>
         </div>
 
         <div class="seperator-skew-bottom">
-            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
         </div>
     </section>
 
+    <!-- EDUCATION -->
     <section id="education" class="education">
         <div class="container">
             <h2 class="main-font" data-aos="fade-in">
                 My <span class="text-blue main-font">Education & Professional Work Experience</span>
             </h2>
 
-            <!-- Education Card -->
-            <!-- Education Card -->
             <div class="education-card" data-aos="zoom-in">
                 <div class="education-card-column">
                     <div class="card-column-image"></div>
-
                     <div class="card-column-large">
                         <h4 class="education-year">April 2025 - Present</h4>
                         <p class="experience-title">Research Assistant</p>
                         <h4 class="text-blue">
                             <a href="https://www.naist.jp" class="text-blue" target="_blank" rel="noopener noreferrer">
-          Nara Institute of Science and Technology - Master of Engineering in Information Science
-        </a>
+                Nara Institute of Science and Technology - Master of Engineering in Information Science
+              </a>
                         </h4>
                         <ul>
-                            <ul>
-                                <li>- Researching AI-driven cybersecurity frameworks combining user behavior analysis, adaptive learning, gamification, and privacy-preserving design.</li>
-                                <li>- Developing an offline Flask-based AI system with local LLMs and ML modules to enhance cybersecurity awareness and simulate threat scenarios.</li>
-                                <li>- Integrating gamified learning and feedback loops to improve user engagement and behavioral adaptation in security training.</li>
-                                <li>- Applying data analysis and anomaly detection to better understand decision-making under simulated cyber-attacks.</li>
-                            </ul>
-
-
+                            <li>- Researching AI-driven cybersecurity frameworks combining user behavior analysis, adaptive learning, gamification, and privacy-preserving design.</li>
+                            <li>- Developing an offline Flask-based AI system with local LLMs and ML modules to enhance cybersecurity awareness and simulate threat scenarios.</li>
+                            <li>- Integrating gamified learning and feedback loops to improve user engagement and behavioral adaptation in security training.</li>
+                            <li>- Applying data analysis and anomaly detection to better understand decision-making under simulated cyber-attacks.</li>
                         </ul>
-
                     </div>
                 </div>
             </div>
-
-
-
-
 
             <div class="education-card" data-aos="zoom-in">
                 <div class="education-card-column">
                     <div class="card-column-image"></div>
-
                     <div class="card-column-large">
-                        <h4 class="education-year">September 2020- May 2023</h4>
+                        <h4 class="education-year">September 2020 - May 2023</h4>
                         <h4 class="text-blue">
                             <a href="https://iugb.edu.ci" class="text-blue" target="_blank" rel="noopener noreferrer">
-                  International University of Grand-Bassam - Bachelor of Science in Computer Science
-                </a>
+                International University of Grand-Bassam - Bachelor of Science in Computer Science
+              </a>
                         </h4>
                         <ul>
                             <li>- Major in Computer Science, focused academic pursuit in the field of Technology.</li>
-                            <li>- Active participation in the Club of Technology, showcasing my commitment to extracurricular learning and collaboration within the tech community.</li>
-                            <li>- Engaged in the STEM Department, demonstrating a dedication to studying and applying knowledge in the fields of Science, Technology, Engineering, and Mathematics.</li>
+                            <li>- Active participation in the Club of Technology, showcasing commitment to extracurricular learning and collaboration.</li>
+                            <li>- Engaged in the STEM Department, applying knowledge in Science, Technology, Engineering, and Mathematics.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
 
             <!-- Professional Experience -->
             <div class="professional-experience" data-aos="fade-up">
-                <h3 class="section-subtitle"></h3>
-
-
-
-                <div class="professional-experience" data-aos="fade-up">
-                    <div class="experience-block" data-aos="fade-up">
-                        <p class="experience-date">July 2023 - April 2024</p>
-                        <p class="experience-title">IT Support Specialist</p>
-                        <p class="experience-location">
-                            <a href="https://carredor.ci" class="text-blue" target="_blank" rel="noopener noreferrer">Groupe Carré d'or</a>
-                        </p>
-                        <ul>
-                            <li>- Maintained and optimized network and server infrastructure, improving reliability and uptime across multiple distribution systems.</li>
-                            <li>- Diagnosed vulnerabilities in ERP management environments, reducing downtime and incident response delays while streamlining operational workflows.</li>
-                            <li>- Enhanced business performance by improving workflow coordination and system reliability, contributing to measurable revenue growth.</li>
-                            <li>- Managed virtualization (Hyper-V) and strengthened firewall and VPN configurations to reinforce internal system security.</li>
-
-                        </ul>
-                    </div>
+                <div class="experience-block" data-aos="fade-up">
+                    <p class="experience-date">July 2023 - April 2024</p>
+                    <p class="experience-title">IT Support Specialist</p>
+                    <p class="experience-location">
+                        <a href="https://carredor.ci" class="text-blue" target="_blank" rel="noopener noreferrer">Groupe Carré d'or</a>
+                    </p>
+                    <ul>
+                        <li>- Maintained and optimized network and server infrastructure, improving reliability and uptime.</li>
+                        <li>- Diagnosed vulnerabilities in ERP environments, reducing downtime and streamlining workflows.</li>
+                        <li>- Improved workflow coordination and system reliability, contributing to measurable revenue growth.</li>
+                        <li>- Managed virtualization (Hyper-V) and strengthened firewall/VPN configurations.</li>
+                    </ul>
                 </div>
-
-
-
-
             </div>
+        </div>
     </section>
 
-
-
+    <!-- CONTACT -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title main-font" data-aos="fade-in">Contact <span class="text-blue main-font">Me</span></h2>
+
             <div class="card-container">
-                <!-- Cards for email, GitHub, LinkedIn -->
+                <!-- optional quick cards -->
             </div>
 
             <form id="contact-form" data-aos="zoom-in" data-aos-delay="300" action="https://formspree.io/f/xrgwprbn" method="POST">
@@ -485,23 +388,18 @@
                 </div>
 
                 <button type="submit" class="btn-email">
-            <span class="default">Send</span>
-            <span class="success">
-              <svg viewBox="0 0 16 16">
-                <polyline points="3.75 9 7 12 13 5"></polyline>
-              </svg>Sent
-            </span>
-            <svg class="trails" viewBox="0 0 33 64">
-              <path d="M26,4 C28,13.3333333 29,22.6666667 29,32 C29,41.3333333 28,50.6666667 26,60"></path>
-              <path d="M6,4 C8,13.3333333 9,22.6666667 9,32 C9,41.3333333 8,50.6666667 6,60"></path>
-            </svg>
-            <div class="plane">
-              <div class="left"></div>
-              <div class="right"></div>
-            </div>
-          </button>
+          <span class="default">Send</span>
+          <span class="success">
+            <svg viewBox="0 0 16 16"><polyline points="3.75 9 7 12 13 5"></polyline></svg>Sent
+          </span>
+          <svg class="trails" viewBox="0 0 33 64">
+            <path d="M26,4 C28,13.3333333 29,22.6666667 29,32 C29,41.3333333 28,50.6666667 26,60"></path>
+            <path d="M6,4 C8,13.3333333 9,22.6666667 9,32 C9,41.3333333 8,50.6666667 6,60"></path>
+          </svg>
+          <div class="plane"><div class="left"></div><div class="right"></div></div>
+        </button>
 
-                <!-- Hidden input fields for Formspree configuration -->
+                <!-- Formspree hidden fields -->
                 <input type="hidden" name="_gotcha" style="display:none">
                 <input type="hidden" name="_replyto" value="fakih-hamid@proton.me">
                 <input type="hidden" name="_subject" value="Contact Form Submission">
@@ -510,45 +408,36 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-flex">
                 <img src="img/logo.png" alt="logo" id="logo-footer">
-
                 <div class="footer-icon-links">
-                    <a href="https://github.com/Fakih-Hamid" target="_blank"><i class="fab fa-github fa-2x"></i
-            ></a>
-                    <a href="https://www.linkedin.com/in/fakih-hamid/?locale=en_US" target="_blank"><i class="fab fa-linkedin fa-2x"></i
-            ></a>
+                    <a href="https://github.com/Fakih-Hamid" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/fakih-hamid/?locale=en_US" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
                     <a href="mailto:fakih-hamid@proton.me"><i class="fas fa-envelope fa-2x"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-
     <a id="backToTopBtn" class="btn-blue">
         <i class="fa fa-chevron-up"></i>
     </a>
 
-    <!-- jQuery -->
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Particles.js for hero section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- GSAP animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
     <script>
         particlesJS.load('particles-js', './particles.json', function() {
             console.log("particles.json loaded...")
-        })
-
+        });
         particlesJS.load('skills', './particles.json', function() {
             console.log("particles.json loaded...")
-        })
-
+        });
         particlesJS.load('footer', './particles.json', function() {
             console.log("particles.json loaded...")
         });
@@ -556,12 +445,10 @@
 
     <script defer src="js/app.js"></script>
 
-    <!-- AOS Animations -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
-
 </body>
 
 </html>
