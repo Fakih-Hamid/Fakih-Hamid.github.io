@@ -1555,3 +1555,99 @@ header .seperator-skew svg .fill-white {
         max-width: 100%;
     }
 }
+
+
+/* Header layout guardrails */
+
+#header {
+    position: relative;
+    overflow: hidden;
+    /* keeps particles inside */
+    padding-top: 16px;
+    /* space above nav */
+}
+
+
+/* Particles background only */
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#particles-js canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+
+/* Nav layout */
+
+#nav {
+    position: relative;
+    z-index: 2;
+    /* above particles */
+}
+
+.nav-container {
+    max-width: var(--container, 1100px);
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo img {
+    height: 44px;
+    /* consistent height */
+}
+
+
+/* Desktop links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links .link {
+    white-space: nowrap;
+}
+
+
+/* Hero spacing so it doesn't collide with nav */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: clamp(40px, 6vw, 96px) 16px 32px;
+}
+
+
+/* Socials on their own row */
+
+.socials {
+    position: relative;
+    z-index: 1;
+    margin-top: 12px;
+}
+
+
+/* Make sure mobile menu overlays correctly */
+
+.mobile-menu,
+.mobile-menu-icon {
+    position: relative;
+    z-index: 3;
+}
