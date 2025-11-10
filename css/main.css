@@ -1464,3 +1464,28 @@ header .seperator-skew svg .fill-white {
 
 
 /* 6rem → 4rem */
+
+
+/* ==== Project Image Size Control ==== */
+
+.project-left img {
+    width: 100%;
+    max-width: 500px;
+    /* limite la largeur */
+    height: auto;
+    border-radius: 10px;
+    /* joli arrondi optionnel */
+    object-fit: cover;
+    /* recadre proprement l’image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Sur mobile ou petits écrans */
+
+@media (max-width: 768px) {
+    .project-left img {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
