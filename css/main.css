@@ -1555,3 +1555,302 @@ header .seperator-skew svg .fill-white {
         max-width: 100%;
     }
 }
+
+:root {
+    --container: 1100px;
+    --gap: 28px;
+    --radius: 12px;
+    --blue: #3b82f6;
+    --text: #e5e7eb;
+    --heading: #fff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+
+/* Typo fluide (s’adapte à l’écran) */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--heading);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.1rem, 1.2vw + .9rem, 1.6rem);
+}
+
+p,
+li {
+    font-size: clamp(.98rem, .4vw + .9rem, 1.05rem);
+}
+
+.container,
+.projects {
+    max-width: var(--container);
+    padding: clamp(1.2rem, 2.5vw, 3rem) 16px;
+    margin: 0 auto;
+}
+
+
+/* Desktop par défaut (grande largeur) */
+
+.project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    margin: clamp(18px, 2.5vw, 36px) 0;
+}
+
+.project-left {
+    flex: 0 0 42%;
+    display: flex;
+    justify-content: center;
+}
+
+.project-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Image contrôlée & élégante */
+
+.project-left img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* Boutons */
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-blue-outline {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-blue-outline:hover {
+    background: var(--blue);
+    color: #fff;
+}
+
+
+/* Breakpoints */
+
+@media (max-width: 992px) {
+    .project-left {
+        flex-basis: 48%;
+    }
+    .project-left img {
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 900px) {
+    .project-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .project-left,
+    .project-right {
+        width: 100%;
+    }
+    .project-left img {
+        max-width: 100%;
+    }
+}
+
+.skills h2 {
+    font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 1.6rem;
+}
+
+
+/* grille flexible & espacements stables */
+
+.skills .skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 26px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.skills .skills-icons li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    margin: 0.5rem 0.75rem;
+    font-size: clamp(.95rem, .3vw + .85rem, 1.05rem);
+}
+
+
+/* Iconify + SVG: tailles fluides */
+
+.skills .skills-icons .iconify {
+    font-size: clamp(32px, 3vw, 50px);
+    line-height: 1;
+}
+
+.skills .skills-icons svg {
+    width: clamp(32px, 3vw, 50px);
+    height: clamp(32px, 3vw, 50px);
+}
+
+
+/* Hover doux */
+
+.skills .skills-icons li:hover {
+    transform: scale(1.08);
+    transition: transform .2s ease;
+}
+
+
+/* Liens facilement cliquables */
+
+a,
+.btn-blue-outline {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* Respirations sur petits écrans */
+
+@media (max-width: 600px) {
+    .projects,
+    .skills .container {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+    .project-links {
+        gap: 12px;
+    }
+}
+
+
+/* Très petits écrans (≤420px) */
+
+@media (max-width: 420px) {
+    .skills .skills-icons {
+        gap: 14px 18px;
+    }
+    .skills .skills-icons .iconify,
+    .skills .skills-icons svg {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+/* Empêche les grandes images de “sauter” au chargement */
+
+.project-left img {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px 450px;
+}
+
+
+/* Lisse les scrolls */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Désactiver/assouplir AOS sur très petits écrans si saccades */
+
+@media (max-width: 420px) {
+    [data-aos] {
+        transition-duration: .4s;
+    }
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin: 32px 0;
+}
+
+.project-left {
+    flex: 0 0 42%;
+    display: flex;
+    justify-content: center;
+}
+
+.project-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-left img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+@media (max-width:900px) {
+    .project-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-left,
+    .project-right {
+        width: 100%;
+    }
+    .project-left img {
+        max-width: 100%;
+    }
+}
+
+.tech-stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.tech-stack-list li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
