@@ -1826,3 +1826,69 @@ body {
     position: relative;
     z-index: 1;
 }
+
+
+/* --- NAV: force en haut et neutralise tout "fixed bottom" hérité --- */
+
+#nav {
+    position: sticky;
+    /* reste en haut quand on scrolle */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    /* au-dessus des particules et du hero */
+    background: transparent;
+    /* change en fond si tu veux un fond opaque */
+}
+
+
+/* remet les liens à leur position normale */
+
+.nav-links {
+    position: static !important;
+    transform: none !important;
+    bottom: auto !important;
+    left: auto !important;
+}
+
+
+/* garde le contenu du header sous le nav */
+
+#header {
+    padding-top: 12px;
+}
+
+
+/* augmente si ton nav est plus haut */
+
+
+/* les couches: particules tout au fond, puis déco, puis contenu, puis nav */
+
+#particles-js {
+    z-index: 0;
+}
+
+.seperator-skew {
+    position: relative;
+    z-index: 1;
+}
+
+.hero,
+.socials {
+    position: relative;
+    z-index: 2;
+}
+
+#nav {
+    z-index: 3;
+}
+
+
+/* sécurité mobile: le menu mobile doit passer au-dessus de tout */
+
+.mobile-menu,
+.mobile-menu-icon {
+    z-index: 30;
+    position: relative;
+}
