@@ -1651,3 +1651,178 @@ header .seperator-skew svg .fill-white {
     position: relative;
     z-index: 3;
 }
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    position: relative;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#particles-js canvas {
+    width: 100%!important;
+    height: 100%!important;
+    display: block;
+}
+
+#nav,
+.hero,
+.socials,
+.seperator-skew {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-container {
+    max-width: var(--container, 1100px);
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo img {
+    height: 44px;
+}
+
+.hero {
+    padding: clamp(40px, 6vw, 96px) 16px 32px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+
+/* Empêche tout dépassement horizontal éventuel */
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+
+/* Assure que le header est un bloc bien distinct */
+
+#header {
+    display: block;
+}
+
+
+/* Le séparateur doit être au-dessus des particules, mais sous la nav */
+
+#header .seperator-skew {
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+
+/* S'assure que la nav prend bien toute la largeur et que le logo reste en ligne */
+
+#nav {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-container {
+    max-width: var(--container, 1100px);
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Les liens du menu ne “cassent” pas la ligne avec le logo */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+
+/* Le héros ne monte pas sous la nav */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    /* sous la nav, au-dessus des particules */
+    padding: clamp(40px, 6vw, 96px) 16px 32px;
+}
+
+
+/* Socials sous le hero, même pile */
+
+.socials {
+    position: relative;
+    z-index: 1;
+    margin-top: 12px;
+}
+
+
+/* Particules = fond seulement */
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#particles-js canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+
+/* (au cas où) conteneur générique si non défini plus haut */
+
+.container {
+    max-width: var(--container, 1100px);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* Sécurité: la section projects commence proprement sous le header */
+
+.projects {
+    position: relative;
+    z-index: 1;
+}
