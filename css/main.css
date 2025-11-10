@@ -2024,3 +2024,92 @@ body{ padding-top: 72px; }  // décale le contenu pour ne pas passer sous la bar
     bottom: auto !important;
     top: auto !important;
 }
+
+
+/* --- NAV fixée en haut, sans casser le reste --- */
+
+:root {
+    --nav-h: 64px;
+}
+
+
+/* hauteur de la barre */
+
+#nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(24, 26, 27, .65);
+    backdrop-filter: blur(6px);
+}
+
+.nav-container {
+    height: var(--nav-h);
+    align-items: center;
+}
+
+
+/* Le header se décale sous la nav */
+
+#header {
+    padding-top: calc(var(--nav-h) + 16px) !important;
+}
+
+
+/* Ta hero reprend un padding normal (pas besoin d’un gros padding-top) */
+
+.hero {
+    padding: 32px 16px 32px !important;
+}
+
+
+/* --- SOCIALS: en badges, pas en barres pleine largeur --- */
+
+.socials ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.socials li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: auto;
+    /* empêche 100% */
+}
+
+.socials li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* couleurs (si tu utilises bg-blue / bg-dark-grey / bg-white) */
+
+.bg-blue {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.bg-dark-grey {
+    background: #2e3234;
+    color: #fff;
+}
+
+.bg-white {
+    background: #fff;
+    color: #111;
+}
+
+.socials .text-dark-grey {
+    color: #111;
+}
