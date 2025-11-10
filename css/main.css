@@ -1390,7 +1390,7 @@ header .seperator-skew svg .fill-white {
 /* 2) Icônes Iconify (span) — augmente la taille réelle */
 
 .skills .skills-icons .iconify {
-    font-size: 46px;
+    font-size: 52px;
     /* ~40–44px est un bon sweet spot */
     line-height: 1;
     margin-bottom: 8px;
@@ -1401,9 +1401,9 @@ header .seperator-skew svg .fill-white {
 /* Garde la compatibilité si certaines icônes sont de vrais <svg> */
 
 .skills .skills-icons svg {
-    width: 48px;
+    width: 52px;
     /* au lieu de 70/90px, cohérent avec 40px ci-dessus */
-    height: 48px;
+    height: 52px;
 }
 
 
