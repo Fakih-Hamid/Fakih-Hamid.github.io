@@ -277,6 +277,9 @@ a {
     outline: none;
     color: var(--text);
     -webkit-appearance: none;
+    appearance: none;
+    /* Standard (Firefox, Edge, etc.) */
+    -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: transparent;
 }
 
