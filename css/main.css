@@ -1360,3 +1360,104 @@ header .seperator-skew svg .fill-white {
         margin: 0 1rem;
     }
 }
+
+
+/* ===== Skills: sizing & readability tweaks ===== */
+
+
+/* 1) Titre plus visible */
+
+.skills h2 {
+    font-size: 2.4rem;
+    /* desktop */
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin-bottom: 2rem;
+    /* un peu moins d’air pour rapprocher des icônes */
+}
+
+@media (max-width: 768px) {
+    .skills h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* 2) Icônes Iconify (span) — augmente la taille réelle */
+
+.skills .skills-icons .iconify {
+    font-size: 40px;
+    /* ~40–44px est un bon sweet spot */
+    line-height: 1;
+    margin-bottom: 8px;
+    /* espace entre l’icône et le label */
+}
+
+
+/* Garde la compatibilité si certaines icônes sont de vrais <svg> */
+
+.skills .skills-icons svg {
+    width: 42px;
+    /* au lieu de 70/90px, cohérent avec 40px ci-dessus */
+    height: 42px;
+}
+
+
+/* 3) Labels plus lisibles */
+
+.skills .skills-icons li {
+    font-size: 1.05rem;
+    /* un chouïa plus grand */
+    margin: 0.75rem 1rem;
+    /* resserré pour caser plus d’icônes */
+    gap: 6px;
+}
+
+
+/* 4) Meilleure grille + centrage */
+
+.skills .skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 26px;
+    /* contrôle fin des espacements */
+    max-width: 1100px;
+}
+
+
+/* 5) Hover plus doux (évite le "saut" trop fort) */
+
+.skills .skills-icons li:hover {
+    transform: scale(1.15);
+    /* 1.15 au lieu de 1.3 */
+    transition: transform .2s ease;
+}
+
+
+/* 6) Responsive */
+
+@media (max-width: 768px) {
+    .skills .skills-icons .iconify {
+        font-size: 32px;
+    }
+    .skills .skills-icons svg {
+        width: 34px;
+        height: 34px;
+    }
+    .skills .skills-icons li {
+        font-size: 1rem;
+        margin: 0.5rem 0.75rem;
+    }
+}
+
+
+/* (Optionnel) Réduire un peu le padding vertical de la section */
+
+.skills .container {
+    padding: 4rem 0;
+}
+
+
+/* 6rem → 4rem */
