@@ -1489,3 +1489,69 @@ header .seperator-skew svg .fill-white {
         margin-bottom: 1.5rem;
     }
 }
+
+
+/* Grille propre pour chaque projet */
+
+.project-row {
+    display: flex;
+    align-items: center;
+    /* centre verticalement image + texte */
+    justify-content: space-between;
+    gap: 28px;
+    margin: 32px 0;
+}
+
+
+/* Colonnes équilibrées */
+
+.project-left {
+    flex: 0 0 42%;
+    /* ~40–45% pour l'image */
+    display: flex;
+    justify-content: center;
+    /* centre l'image horizontalement */
+}
+
+.project-right {
+    flex: 1;
+    /* le texte prend l’espace restant */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Image contrôlée (pas collée à gauche) */
+
+.project-left img {
+    width: 100%;
+    max-width: 500px;
+    /* limite la largeur */
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    /* safety: centre même si parent change */
+    border-radius: 10px;
+}
+
+
+/* Responsive: pile image au-dessus du texte */
+
+@media (max-width: 900px) {
+    .project-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        /* garde le texte lisible */
+    }
+    .project-left,
+    .project-right {
+        flex: none;
+        width: 100%;
+    }
+    .project-left img {
+        max-width: 100%;
+    }
+}
