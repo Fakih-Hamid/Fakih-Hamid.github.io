@@ -1950,3 +1950,77 @@ body {
 #nav {
     z-index: 50;
 }
+
+
+/* --- NAV TOUJOURS EN HAUT --- */
+
+
+/* Option A: sticky (reste en haut une fois arrivée en haut, sans recouvrement) */
+
+#nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    /* au-dessus des particules */
+    background: transparent;
+    /* ou une couleur si tu veux un fond au scroll */
+}
+
+
+/* Si tu préfères un nav TOUJOURS visible même en scroll, remplace le bloc ci-dessus par:
+#nav{ position: fixed; top:0; left:0; right:0; z-index:50; }
+body{ padding-top: 72px; }  // décale le contenu pour ne pas passer sous la barre
+*/
+
+
+/* S’assure que la liste desktop ne se retrouve jamais collée en bas par un style global */
+
+#nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    position: static !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+
+/* Particules derrière tout */
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero,
+.socials,
+.seperator-skew {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Le burger + menu mobile peuvent passer au-dessus si ouvert */
+
+.mobile-menu,
+.mobile-menu-icon {
+    position: relative;
+    z-index: 60;
+}
+
+
+/* Si tu as quelque part une classe .flex qui force du fixed/bottom,
+   on neutralise son effet à l’intérieur du nav */
+
+#nav .flex {
+    position: static !important;
+    bottom: auto !important;
+    top: auto !important;
+}
