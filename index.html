@@ -38,22 +38,23 @@
 
 <body>
     <!-- HEADER -->
-    <header id="header">
+    <header id="header" style="position:relative; overflow:hidden;">
         <!-- Particles background only -->
-        <div id="particles-js"></div>
+        <div id="particles-js" style="position:absolute; inset:0; z-index:0; pointer-events:none;"></div>
 
-        <!-- NAV -->
-        <nav id="nav" data-aos="fade-in">
-            <div class="container nav-container">
+        <!-- NAV (forcée en haut en HTML) -->
+        <nav id="nav" data-aos="fade-in" style="position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(24,26,27,.65); backdrop-filter:blur(6px);">
+            <div class="container nav-container" style="max-width:1100px; margin:0 auto; padding:8px 16px; display:flex; align-items:center; justify-content:space-between;">
                 <a href="index.html" id="logo">
-                    <img src="img/logo.png" alt="logo">
+                    <img src="img/logo.png" alt="logo" style="height:44px;">
                 </a>
 
-                <ul class="hide-for-mobile nav-links">
-                    <li><a href="#projects" class="link"><i class="fas fa-code"></i> Projects</a></li>
-                    <li><a href="#skills" class="link"><i class="fas fa-tools"></i> Skills</a></li>
-                    <li><a href="#education" class="link"><i class="fas fa-user-graduate"></i> Education & Work Experience</a></li>
-                    <li><a href="#contact" class="link"><i class="fas fa-envelope"></i> Contact</a></li>
+                <!-- IMPORTANT: pas de 'flex' ici -->
+                <ul class="hide-for-mobile nav-links" style="display:flex; align-items:center; gap:18px; margin:0; padding:0; list-style:none;">
+                    <li><a href="#projects" class="link" style="white-space:nowrap;"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="#skills" class="link" style="white-space:nowrap;"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li><a href="#education" class="link" style="white-space:nowrap;"><i class="fas fa-user-graduate"></i> Education & Work Experience</a></li>
+                    <li><a href="#contact" class="link" style="white-space:nowrap;"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
 
                 <!-- Mobile hamburger -->
@@ -64,7 +65,8 @@
             <div class="mobile-menu hide-for-desktop">
                 <div class="container">
                     <div class="mobile-menu-links">
-                        <ul class="flex">
+                        <!-- IMPORTANT: pas de 'flex' ici non plus -->
+                        <ul style="display:flex; gap:14px; flex-wrap:wrap; margin:0; padding:0; list-style:none;">
                             <li><a href="#projects" class="link blue-hover">Projects</a></li>
                             <li><a href="#skills" class="link blue-hover">Skills</a></li>
                             <li><a href="#education" class="link blue-hover">Education & Professional Work</a></li>
@@ -76,7 +78,7 @@
         </nav>
 
         <!-- HERO -->
-        <div class="hero">
+        <div class="hero" style="position:relative; z-index:1; padding:96px 16px 32px; /* 96px = marge sous la nav fixe */">
             <div data-aos="fade-up">
                 <h1 class="h1">Hi 👋, I'm <span class="main-font text-blue">Hamid</span></h1>
                 <p class="student" id="student">
@@ -93,8 +95,8 @@
         </div>
 
         <!-- SOCIAL LINKS -->
-        <div class="socials" data-aos="fade-in">
-            <ul>
+        <div class="socials" data-aos="fade-in" style="position:relative; z-index:1; margin-top:12px;">
+            <ul style="margin:0; padding:0; list-style:none;">
                 <li class="bg-blue">
                     <a href="https://www.linkedin.com/in/fakih-hamid/?locale=en_US" target="_blank">
                         <span class="socials-text">LinkedIn</span> <i class="fab fa-linkedin fa-2x"></i>
@@ -114,10 +116,10 @@
         </div>
 
         <!-- Separator -->
-        <div class="seperator-skew">
+        <div class="seperator-skew" style="position:relative; z-index:1;">
             <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-      </svg>
+      <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
         </div>
     </header>
 
