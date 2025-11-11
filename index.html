@@ -430,6 +430,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
     <script>
+        const loadedParticleTargets = new Set();
+
         const loadParticles = (elementId) => {
             const container = document.getElementById(elementId);
             if (!container) return;
@@ -438,7 +440,16 @@
 
             particlesJS.load(elementId, './particles.json', function() {
                 console.log(`particles.json loaded for ${elementId}`);
+                loadedParticleTargets.add(elementId);
             });
+        };
+
+        const destroyParticles = (elementId) => {
+            const container = document.getElementById(elementId);
+            if (!container) return;
+            const canvases = container.querySelectorAll('canvas');
+            canvases.forEach(canvas => canvas.remove());
+            loadedParticleTargets.delete(elementId);
         };
 
         // Always load the header particles
@@ -453,6 +464,8 @@
         const handleParticlesForViewport = (mq) => {
             if (shouldLoadExtras()) {
                 extraParticleTargets.forEach(loadParticles);
+            } else {
+                extraParticleTargets.forEach(destroyParticles);
             }
         };
 
