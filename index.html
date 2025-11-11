@@ -430,15 +430,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
     <script>
-        particlesJS.load('particles-js', './particles.json', function() {
-            console.log("particles.json loaded...")
-        });
-        particlesJS.load('skills', './particles.json', function() {
-            console.log("particles.json loaded...")
-        });
-        particlesJS.load('footer', './particles.json', function() {
-            console.log("particles.json loaded...")
-        });
+        const loadParticles = (elementId) => {
+            const container = document.getElementById(elementId);
+            if (!container) return;
+            // Avoid duplicate canvas insertion
+            if (container.querySelector('canvas')) return;
+
+            particlesJS.load(elementId, './particles.json', function() {
+                console.log(`particles.json loaded for ${elementId}`);
+            });
+        };
+
+        // Always load the header particles
+        loadParticles('particles-js');
+
+        const extraParticleTargets = ['skills', 'footer'];
+        const desktopQuery = window.matchMedia('(min-width: 992px)');
+
+        const handleParticlesForViewport = (mq) => {
+            if (mq.matches) {
+                extraParticleTargets.forEach(loadParticles);
+            }
+        };
+
+        handleParticlesForViewport(desktopQuery);
+
+        if (typeof desktopQuery.addEventListener === 'function') {
+            desktopQuery.addEventListener('change', handleParticlesForViewport);
+        } else if (typeof desktopQuery.addListener === 'function') {
+            desktopQuery.addListener(handleParticlesForViewport);
+        }
     </script>
 
     <script defer src="js/app.js"></script>
