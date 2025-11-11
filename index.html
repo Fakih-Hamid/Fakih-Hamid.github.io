@@ -446,9 +446,12 @@
 
         const extraParticleTargets = ['skills', 'footer'];
         const desktopQuery = window.matchMedia('(min-width: 992px)');
+        const finePointerQuery = window.matchMedia('(any-pointer: fine)');
+
+        const shouldLoadExtras = () => desktopQuery.matches && finePointerQuery.matches;
 
         const handleParticlesForViewport = (mq) => {
-            if (mq.matches) {
+            if (shouldLoadExtras()) {
                 extraParticleTargets.forEach(loadParticles);
             }
         };
@@ -459,6 +462,14 @@
             desktopQuery.addEventListener('change', handleParticlesForViewport);
         } else if (typeof desktopQuery.addListener === 'function') {
             desktopQuery.addListener(handleParticlesForViewport);
+        } else if (typeof desktopQuery.addListener === 'function') {
+            desktopQuery.addListener(handleParticlesForViewport);
+        }
+
+        if (typeof finePointerQuery.addEventListener === 'function') {
+            finePointerQuery.addEventListener('change', handleParticlesForViewport);
+        } else if (typeof finePointerQuery.addListener === 'function') {
+            finePointerQuery.addListener(handleParticlesForViewport);
         }
     </script>
 
