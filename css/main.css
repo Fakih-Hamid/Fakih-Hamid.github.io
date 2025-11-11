@@ -1389,6 +1389,12 @@ header .seperator-skew svg .fill-white {
     header nav .nav-container {
         padding: 8px 20px;
     }
+    header {
+        min-height: auto;
+    }
+    header #particles-js {
+        height: min(520px, 80vh);
+    }
     header nav .nav-container #logo img,
     #logo img,
     .footer .footer-flex #logo-footer {
@@ -1438,6 +1444,9 @@ header .seperator-skew svg .fill-white {
     header .hero {
         padding: 60px 18px 36px !important;
         width: 100%;
+    }
+    header #particles-js {
+        height: min(420px, 70vh);
     }
     header .hero:hover {
         transform: none;
@@ -1553,6 +1562,9 @@ header .seperator-skew svg .fill-white {
     }
     header .hero {
         padding: 64px 14px 28px !important;
+    }
+    header #particles-js {
+        height: min(360px, 70vh);
     }
     header .hero h1 {
         font-size: clamp(1.6rem, 9vw, 1.9rem);
