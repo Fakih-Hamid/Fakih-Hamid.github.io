@@ -40,13 +40,13 @@
     <!-- HEADER -->
     <header id="header" style="position:relative; overflow:hidden;">
         <!-- Particles background only -->
-        <div id="particles-js" style="position:absolute; inset:0; z-index:0; pointer-events:none;"></div>
+        <div id="particles-js" style="position:absolute; inset:0; z-index:0; overflow:hidden;"></div>
 
         <!-- NAV (forcée en haut en HTML) -->
         <nav id="nav" data-aos="fade-in" style="position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(24,26,27,.65); backdrop-filter:blur(6px);">
             <div class="container nav-container" style="max-width:1100px; margin:0 auto; padding:8px 16px; display:flex; align-items:center; justify-content:space-between;">
                 <a href="index.html" id="logo">
-                    <img src="img/logo.png" alt="logo" style="height:44px;">
+                    <img src="img/logo.png" alt="logo" style="height:70px;">
                 </a>
 
                 <ul class="hide-for-mobile nav-links" style="display:flex; align-items:center; gap:18px; margin:0; padding:0; list-style:none;">
@@ -78,14 +78,16 @@
 
         <!-- HERO -->
         <div class="hero" style="position:relative; z-index:1; padding:96px 16px 32px; /* 96px = marge sous la nav fixe */">
-            <div data-aos="fade-up">
-                <h1 class="h1">Hi 👋, I'm <span class="main-font text-blue">Hamid</span></h1>
-                <p class="student" id="student">
-                    I'm deeply fascinated by everything IT, from the way systems connect to how they stay secure. I constantly explore, learn, and push boundaries. My goal is to make a meaningful impact in cybersecurity and AI transforming my passion into innovation and
-                    expertise.
-                </p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn-blue"><i class="fas fa-code"></i> Projects</a>
+            <div class="container" style="max-width: 900px; margin: 0 auto;">
+                <div data-aos="fade-up">
+                    <h1 class="h1">Hi 👋, I'm <span class="main-font text-blue">Hamid</span></h1>
+                    <p class="student" id="student">
+                        I'm deeply fascinated by everything IT, from the way systems connect to how they stay secure. I constantly explore, learn, and push boundaries. My goal is to make a meaningful impact in cybersecurity and AI transforming my passion into innovation and
+                        expertise.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn-blue"><i class="fas fa-code"></i> Projects</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,7 +116,8 @@
         <!-- Separator -->
         <div class="seperator-skew" style="position:relative; z-index:1;">
             <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+               
+      <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
     </svg>
         </div>
     </header>
@@ -270,8 +273,8 @@
     <!-- SKILLS -->
     <section id="skills" class="skills">
         <div class="seperator-skew-top">
-            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+         
+        <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
       </svg>
         </div>
 
@@ -315,8 +318,8 @@
         </div>
 
         <div class="seperator-skew-bottom">
-            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+     
+        <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
       </svg>
         </div>
     </section>
@@ -372,7 +375,7 @@
             <div class="professional-experience" data-aos="fade-up">
                 <div class="experience-block" data-aos="fade-up">
                     <p class="experience-date">July 2023 - April 2024</p>
-                    <p class="experience-title">IT Support Specialist</p>
+                    <p class="experience-title">IT Support Engineer</p>
                     <p class="experience-location">
                         <a href="https://carredor.ci" class="text-blue" target="_blank" rel="noopener noreferrer">Groupe Carré d'or</a>
                     </p>
@@ -458,6 +461,42 @@
     <script>
         const loadedParticleTargets = new Set();
 
+        const resizeParticlesCanvas = (elementId) => {
+            const container = document.getElementById(elementId);
+            if (!container) return;
+            
+            // Si c'est le header particles, limiter à la hauteur du header
+            if (elementId === 'particles-js') {
+                const header = document.getElementById('header');
+                if (header) {
+                    const headerHeight = header.offsetHeight;
+                    const headerWidth = header.offsetWidth;
+                    const canvas = container.querySelector('canvas');
+                    if (canvas) {
+                        // Forcer la hauteur exacte du header
+                        canvas.style.height = headerHeight + 'px';
+                        canvas.style.maxHeight = headerHeight + 'px';
+                        canvas.style.minHeight = headerHeight + 'px';
+                        canvas.height = headerHeight;
+                        canvas.width = headerWidth;
+                        
+                        // Mettre à jour la taille dans particles.js si disponible
+                        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+                            const pJS = window.pJSDom[0].pJS;
+                            pJS.canvas.size.width = headerWidth;
+                            pJS.canvas.size.height = headerHeight;
+                            pJS.canvas.w = headerWidth;
+                            pJS.canvas.h = headerHeight;
+                            // Redessiner
+                            if (pJS.fn && pJS.fn.canvasPaint) {
+                                pJS.fn.canvasPaint();
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
         const loadParticles = (elementId) => {
             const container = document.getElementById(elementId);
             if (!container) return;
@@ -467,6 +506,36 @@
             particlesJS.load(elementId, './particles.json', function() {
                 console.log(`particles.json loaded for ${elementId}`);
                 loadedParticleTargets.add(elementId);
+                
+                // Optimisations de performance
+                if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+                    const pJS = window.pJSDom[0].pJS;
+                    // Limiter le framerate pour améliorer les performances
+                    if (pJS.fn && pJS.fn.drawAnim) {
+                        // Utiliser requestAnimationFrame avec throttling
+                        const originalDraw = pJS.fn.drawAnim;
+                        let lastTime = 0;
+                        const targetFPS = 30; // Limiter à 30 FPS au lieu de 60
+                        const frameInterval = 1000 / targetFPS;
+                        
+                        pJS.fn.drawAnim = function() {
+                            const now = performance.now();
+                            if (now - lastTime >= frameInterval) {
+                                originalDraw.call(this);
+                                lastTime = now;
+                            } else {
+                                requestAnimationFrame(() => pJS.fn.drawAnim());
+                            }
+                        };
+                    }
+                }
+                
+                // Forcer la taille du canvas pour le header
+                if (elementId === 'particles-js') {
+                    setTimeout(() => {
+                        resizeParticlesCanvas(elementId);
+                    }, 100);
+                }
             });
         };
 
@@ -480,6 +549,33 @@
 
         // Always load the header particles
         loadParticles('particles-js');
+
+        // Redimensionner le canvas quand la fenêtre change de taille
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                resizeParticlesCanvas('particles-js');
+            }, 150);
+        });
+
+        // Redimensionner après le chargement complet
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                resizeParticlesCanvas('particles-js');
+            }, 200);
+        });
+
+        // Observer pour détecter les changements de taille du header
+        if (window.ResizeObserver) {
+            const header = document.getElementById('header');
+            if (header) {
+                const resizeObserver = new ResizeObserver(() => {
+                    resizeParticlesCanvas('particles-js');
+                });
+                resizeObserver.observe(header);
+            }
+        }
 
         const extraParticleTargets = ['skills', 'footer'];
         const desktopQuery = window.matchMedia('(min-width: 992px)');

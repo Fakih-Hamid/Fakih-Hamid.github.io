@@ -114,11 +114,18 @@ a {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 1.5rem 1.5rem;
     margin: auto;
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+/* Réduction de la largeur pour desktop uniquement */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 780px;
+    }
 }
 
 .text-blue {
@@ -452,22 +459,37 @@ a {
 header {
     background: #181a1b;
     background-size: cover;
-    min-height: clamp(480px, 80vh, 720px);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
 }
 
 header #particles-js {
-    height: 100%;
-    min-height: 480px;
-}
-
-header #particles-js canvas {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+header #particles-js canvas {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+    object-fit: contain;
+    pointer-events: auto !important;
+    will-change: transform;
+    image-rendering: optimizeSpeed;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .mobile-menu-icon {
@@ -666,17 +688,17 @@ header .hero h2 span {
     letter-spacing: 2px;
     white-space: nowrap;
     text-align: center;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: bold;
 }
 
 header .hero p {
     color: #dcdcdc;
-    line-height: 1.6;
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.8;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 1.5rem auto;
     padding: 0.5rem;
 }
 
@@ -815,6 +837,26 @@ header .scroll-btn-container div a span:nth-child(3) {
     }
 }
 
+header .seperator-skew-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+header .seperator-skew-top svg {
+    position: absolute;
+    top: 0;
+}
+
+header .seperator-skew-top svg .fill-white {
+    fill: white;
+}
+
 header .seperator-skew {
     position: absolute;
     bottom: 0;
@@ -883,17 +925,15 @@ header .seperator-skew svg .fill-white {
 }
 
 @media screen and (min-height: 900px) {
-    header {
-        min-height: 70vh;
-    }
+    /* Header s'adapte maintenant à son contenu */
     header #particles-js {
-        height: 70vh;
+        /* La hauteur sera gérée par JavaScript pour correspondre au header */
     }
 }
 
 .projects {
     background: white;
-    padding: 3rem 0;
+    padding: 2rem 0 3rem 0;
 }
 
 .projects h2,
@@ -1355,7 +1395,7 @@ header .seperator-skew svg .fill-white {
 
 .footer {
     background: #181a1b;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
     color: white;
 }
 
@@ -1371,11 +1411,12 @@ header .seperator-skew svg .fill-white {
 .footer .footer-flex {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .footer .footer-flex #logo-footer {
-    width: 240px;
-    height: 72px;
+    width: 280px;
+    height: 84px;
     object-fit: contain;
 }
 
@@ -1643,6 +1684,7 @@ header .seperator-skew svg .fill-white {
 
 .footer .footer-flex .footer-icon-links a i {
     transition: 0.3s;
+    font-size: 2.5rem !important;
 }
 
 .footer .footer-flex .footer-icon-links a i:hover {
@@ -2110,12 +2152,15 @@ header .seperator-skew svg .fill-white {
     inset: 0;
     z-index: 0;
     pointer-events: auto;
+    overflow: hidden;
 }
 
 #particles-js canvas {
     width: 100% !important;
     height: 100% !important;
+    max-height: 100%;
     display: block;
+    overflow: hidden;
 }
 
 
