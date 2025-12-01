@@ -82,8 +82,8 @@
                 <div data-aos="fade-up">
                     <h1 class="h1">Hi 👋, I'm <span class="main-font text-blue">Hamid</span></h1>
                     <p class="student" id="student">
-                        I'm deeply fascinated by everything IT, from the way systems connect to how they stay secure. I constantly explore, learn, and push boundaries. My goal is to make a meaningful impact in cybersecurity and AI transforming my passion into innovation and
-                        expertise.
+                        I work at the intersection of AI, cybersecurity, and human behavior. I build adaptive, privacy-preserving systems using machine learning, local LLMs, behavioral analytics, and game-inspired security environments. My goal is to turn research-driven ideas
+                        into practical tools that strengthen digital resilience.
                     </p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn-blue"><i class="fas fa-code"></i> Projects</a>
@@ -116,10 +116,10 @@
         <!-- Separator -->
         <div class="seperator-skew" style="position:relative; z-index:1;">
             <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-               
-      <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
-    </svg>
+                <rect fill="transparent" x="0" y="0" width="2560" height="100"></rect>
+            </svg>
         </div>
+
     </header>
 
     <!-- PROJECTS -->
@@ -276,9 +276,9 @@
     <!-- SKILLS -->
     <section id="skills" class="skills">
         <div class="seperator-skew-top">
-         
-        <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
-      </svg>
+
+            <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
+            </svg>
         </div>
 
         <div class="container" data-aos="fade-in">
@@ -321,11 +321,18 @@
         </div>
 
         <div class="seperator-skew-bottom">
-     
-        <rect class="fill-white" x="0" y="0" width="2560" height="100"></rect>
-      </svg>
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <rect fill="transparent" x="0" y="0" width="2560" height="100"></rect>
+            </svg>
         </div>
     </section>
+
+    <!-- Transparent separator between Skills and Education -->
+    <div class="separator-transparent">
+        <svg x="0" y="0" viewBox="0 0 2560 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <rect fill="white" x="0" y="0" width="2560" height="40"></rect>
+        </svg>
+    </div>
 
     <!-- EDUCATION -->
     <section id="education" class="education">
@@ -467,7 +474,7 @@
         const resizeParticlesCanvas = (elementId) => {
             const container = document.getElementById(elementId);
             if (!container) return;
-            
+
             // Si c'est le header particles, limiter à la hauteur du header
             if (elementId === 'particles-js') {
                 const header = document.getElementById('header');
@@ -482,7 +489,7 @@
                         canvas.style.minHeight = headerHeight + 'px';
                         canvas.height = headerHeight;
                         canvas.width = headerWidth;
-                        
+
                         // Mettre à jour la taille dans particles.js si disponible
                         if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
                             const pJS = window.pJSDom[0].pJS;
@@ -509,30 +516,136 @@
             particlesJS.load(elementId, './particles.json', function() {
                 console.log(`particles.json loaded for ${elementId}`);
                 loadedParticleTargets.add(elementId);
-                
-                // Optimisations de performance
+
+                // Optimisations de performance et nettoyage du canvas
                 if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
                     const pJS = window.pJSDom[0].pJS;
-                    // Limiter le framerate pour améliorer les performances
+
+                    // Attendre que le canvas soit complètement initialisé puis intercepter toutes les fonctions de dessin
+                    setTimeout(() => {
+                        if (pJS.canvas && pJS.canvas.ctx) {
+                            const canvas = pJS.canvas.el;
+                            const ctx = pJS.canvas.ctx;
+
+                            // Intercepter la fonction clearRect pour s'assurer qu'elle est appelée
+                            const originalClearRect = ctx.clearRect.bind(ctx);
+                            ctx.clearRect = function(x, y, w, h) {
+                                originalClearRect(x, y, w, h);
+                            };
+
+                            // Intercepter toutes les fonctions de dessin pour forcer un nettoyage avant
+                            const drawFunctions = ['fillRect', 'strokeRect', 'fill', 'stroke', 'arc', 'fillText', 'strokeText'];
+                            drawFunctions.forEach(funcName => {
+                                if (ctx[funcName]) {
+                                    const originalFunc = ctx[funcName].bind(ctx);
+                                    ctx[funcName] = function(...args) {
+                                        // Ne pas nettoyer à chaque appel, seulement avant drawAnim
+                                        return originalFunc.apply(this, args);
+                                    };
+                                }
+                            });
+                        }
+                    }, 300);
+
+                    // Intercepter la fonction drawAnim pour forcer un nettoyage complet avant chaque dessin
                     if (pJS.fn && pJS.fn.drawAnim) {
-                        // Utiliser requestAnimationFrame avec throttling
-                        const originalDraw = pJS.fn.drawAnim;
+                        const originalDraw = pJS.fn.drawAnim.bind(pJS);
                         let lastTime = 0;
-                        const targetFPS = 30; // Limiter à 30 FPS au lieu de 60
+                        const targetFPS = 30;
                         const frameInterval = 1000 / targetFPS;
-                        
+
                         pJS.fn.drawAnim = function() {
                             const now = performance.now();
                             if (now - lastTime >= frameInterval) {
-                                originalDraw.call(this);
+                                // Nettoyer TOUT le canvas avant chaque frame
+                                if (pJS.canvas && pJS.canvas.ctx && pJS.canvas.el) {
+                                    const canvas = pJS.canvas.el;
+                                    const ctx = pJS.canvas.ctx;
+                                    const width = canvas.width || pJS.canvas.w || window.innerWidth;
+                                    const height = canvas.height || pJS.canvas.h || window.innerHeight;
+
+                                    // Nettoyage complet et agressif
+                                    ctx.save();
+                                    ctx.setTransform(1, 0, 0, 1, 0, 0);
+                                    ctx.clearRect(0, 0, width, height);
+                                    ctx.restore();
+                                }
+
+                                // Supprimer les particules qui sont hors du canvas, bloquées ou en doublon
+                                if (pJS.particles && pJS.particles.array) {
+                                    const particles = pJS.particles.array;
+                                    const canvasWidth = pJS.canvas.w || window.innerWidth;
+                                    const canvasHeight = pJS.canvas.h || window.innerHeight;
+                                    const seenPositions = new Map();
+
+                                    for (let i = particles.length - 1; i >= 0; i--) {
+                                        const particle = particles[i];
+                                        const posKey = Math.round(particle.x) + '_' + Math.round(particle.y);
+
+                                        // Supprimer les particules qui sont complètement hors du canvas
+                                        if (particle.x < -50 || particle.x > canvasWidth + 50 ||
+                                            particle.y < -50 || particle.y > canvasHeight + 50) {
+                                            particles.splice(i, 1);
+                                            continue;
+                                        }
+
+                                        // Supprimer les particules qui sont bloquées (vitesse nulle ou très faible)
+                                        const speed = Math.sqrt((particle.vx || 0) ** 2 + (particle.vy || 0) ** 2);
+                                        if (speed < 0.01) {
+                                            particles.splice(i, 1);
+                                            continue;
+                                        }
+
+                                        // Supprimer les doublons (particules à la même position exacte)
+                                        if (seenPositions.has(posKey)) {
+                                            particles.splice(i, 1);
+                                            continue;
+                                        }
+                                        seenPositions.set(posKey, true);
+                                    }
+
+                                    // S'assurer qu'on ne dépasse pas le nombre maximum de particules
+                                    const maxParticles = pJS.particles.number.value || 12;
+                                    if (particles.length > maxParticles) {
+                                        // Supprimer les plus anciennes
+                                        particles.splice(maxParticles, particles.length - maxParticles);
+                                    }
+                                }
+
+                                // Appeler la fonction originale
+                                originalDraw();
                                 lastTime = now;
                             } else {
                                 requestAnimationFrame(() => pJS.fn.drawAnim());
                             }
                         };
                     }
+
+                    // Nettoyage périodique supplémentaire toutes les secondes pour le header
+                    if (elementId === 'particles-js') {
+                        const cleanupInterval = setInterval(() => {
+                            if (pJS.canvas && pJS.canvas.ctx && pJS.canvas.el) {
+                                const canvas = pJS.canvas.el;
+                                const ctx = pJS.canvas.ctx;
+                                const width = canvas.width || window.innerWidth;
+                                const height = canvas.height || window.innerHeight;
+
+                                ctx.save();
+                                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                                ctx.clearRect(0, 0, width, height);
+                                ctx.restore();
+                            }
+                        }, 1000);
+
+                        // Nettoyer l'intervalle si l'élément est détruit
+                        if (elementId === 'particles-js') {
+                            window.addEventListener('beforeunload', () => {
+                                clearInterval(cleanupInterval);
+                            });
+                        }
+                    }
                 }
-                
+
                 // Forcer la taille du canvas pour le header
                 if (elementId === 'particles-js') {
                     setTimeout(() => {
