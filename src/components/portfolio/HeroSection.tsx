@@ -87,9 +87,8 @@ export function HeroSection() {
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
             At the Cyber-Resilience Lab (NAIST), my research involves privacy-friendly AI systems that combine local LLMs, 
-            behavioral analytics, and adaptive feedback loops to strengthen user engagement and shape long-term cybersecurity 
-            and digital-hygiene behaviors. Outside research, I enjoy pentesting, game security and anti-cheat engineering, 
-            data mining, and developing experimental tools and prototypes.
+            machine learning, behavioral analytics, gamification, and adaptive feedback loops. Outside research, I enjoy 
+            pentesting, game security and anti-cheat engineering, data mining, and developing experimental tools and prototypes.
           </p>
 
           {/* CTA Buttons */}
