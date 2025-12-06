@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { scrollToSection } from "@/lib/utils";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/fakih-hamid/", label: "LinkedIn" },
   { icon: Github, href: "https://github.com/Fakih-Hamid", label: "GitHub" },
-  { icon: Mail, href: "mailto:hamid.fakih@proton.me", label: "Email" },
+  { icon: Mail, href: "mailto:fakih-hamid@proton.me", label: "Email" },
 ];
 
 export function HeroSection() {
@@ -92,19 +93,19 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "1s" }}>
-            <a
-              href="#projects"
+            <button
+              onClick={() => scrollToSection("projects")}
               className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-semibold rounded-md overflow-hidden transition-all hover:shadow-[0_0_30px_hsl(168_100%_50%/0.5)]"
             >
               <span className="relative z-10">{"<"} View Projects {"/>"}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="px-8 py-4 border border-primary text-primary font-mono font-semibold rounded-md transition-all hover:bg-primary/10 hover:shadow-[0_0_30px_hsl(168_100%_50%/0.3)]"
             >
               Contact Me
-            </a>
+            </button>
           </div>
 
           {/* Social Links */}
@@ -127,10 +128,10 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: "1.5s" }}>
-        <a href="#projects" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+        <button onClick={() => scrollToSection("projects")} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
           <span className="font-mono text-xs">scroll</span>
           <ChevronDown className="w-5 h-5 animate-bounce" />
-        </a>
+        </button>
       </div>
     </section>
   );

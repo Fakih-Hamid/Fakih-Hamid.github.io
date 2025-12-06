@@ -83,14 +83,14 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
       {/* Card */}
       <div className="group bg-card border border-border rounded-lg p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_hsl(168_100%_50%/0.1)]">
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <div className="flex items-center gap-3">
-            <div className={`p-2 rounded-lg ${
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+          <div className="flex items-center gap-3 flex-1 min-w-0">
+            <div className={`p-2 rounded-lg flex-shrink-0 ${
               item.type === "work" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
             }`}>
               <Icon className="w-5 h-5" />
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
               <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
@@ -98,22 +98,22 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
                 href={item.orgUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors break-words"
               >
                 {item.organization}
-                <ExternalLink className="w-3 h-3" />
+                <ExternalLink className="w-3 h-3 flex-shrink-0" />
               </a>
             </div>
           </div>
           
           {/* Period */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 flex-shrink-0">
             {item.current && (
-              <span className="px-2 py-1 text-xs font-mono bg-primary/20 text-primary rounded-full animate-glow-pulse">
+              <span className="px-2 py-1 text-xs font-mono bg-primary/20 text-primary rounded-full animate-glow-pulse w-fit">
                 Current
               </span>
             )}
-            <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
+            <span className="font-mono text-xs text-muted-foreground break-words sm:whitespace-nowrap">
               {item.period}
             </span>
           </div>

@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, Send, Terminal } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 const contactLinks = [
-  { icon: Mail, label: "Email", value: "hamid.fakih@proton.me", href: "mailto:hamid.fakih@proton.me" },
+  { icon: Mail, label: "Email", value: "fakih-hamid@proton.me", href: "mailto:fakih-hamid@proton.me" },
   { icon: Github, label: "GitHub", value: "Fakih-Hamid", href: "https://github.com/Fakih-Hamid" },
   { icon: Linkedin, label: "LinkedIn", value: "fakih-hamid", href: "https://www.linkedin.com/in/fakih-hamid/" },
 ];

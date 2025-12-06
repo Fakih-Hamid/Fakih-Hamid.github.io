@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
+import { scrollToSection } from "@/lib/utils";
 
 const navItems = [
   { label: "Projects", href: "#projects" },
@@ -43,9 +44,9 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
+                onClick={() => scrollToSection(item.href.replace("#", ""))}
                 className="relative font-mono text-sm text-muted-foreground hover:text-primary transition-colors group"
               >
                 <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">
@@ -53,14 +54,14 @@ export function Navbar() {
                 </span>
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all group-hover:w-full" />
-              </a>
+              </button>
             ))}
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-primary border border-primary/30 rounded-md hover:bg-primary/10 hover:shadow-[0_0_15px_hsl(168_100%_50%/0.3)] transition-all"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -69,18 +70,20 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden mt-4 py-4 border-t border-border bg-card/50 backdrop-blur-sm rounded-lg animate-fade-in">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.label}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => {
+                    scrollToSection(item.href.replace("#", ""));
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors text-left px-2 py-1 rounded hover:bg-primary/10"
                 >
                   <span className="text-primary">{">"} </span>
                   {item.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>
