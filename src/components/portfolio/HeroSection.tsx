@@ -86,9 +86,10 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-            I build adaptive, privacy-preserving systems using machine learning, 
-            local LLMs, and game-inspired security environments. Turning research-driven 
-            ideas into practical tools that strengthen digital resilience.
+            As part of my research at the Cyber-Resilience Laboratory (NAIST), I work on a privacy-friendly AI framework 
+            that leverages local LLMs, behavioral signals, and adaptive feedback loops to enhance user engagement and drive 
+            long-term cybersecurity and digital-hygiene behavior change across diverse user groups. In my free time, I enjoy 
+            pentesting, anti-cheat engineering, data mining, and building experimental projects.
           </p>
 
           {/* CTA Buttons */}
