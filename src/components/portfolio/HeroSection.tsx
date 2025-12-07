@@ -55,7 +55,7 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 pt-8 md:pt-0">
         <div className="max-w-4xl mx-auto text-center">
           {/* Terminal-style greeting */}
           <div className="inline-block mb-3 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
