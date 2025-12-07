@@ -35,7 +35,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 md:py-0">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       
@@ -58,7 +58,7 @@ export function HeroSection() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Terminal-style greeting */}
-          <div className="inline-block mb-8 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="inline-block mb-3 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <span className="font-mono text-sm text-muted-foreground">
               <span className="text-primary">$</span> whoami
             </span>
