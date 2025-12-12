@@ -109,7 +109,7 @@ export function HeroSection() {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center gap-6 mb-20 md:mb-0 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+          <div className="flex justify-center gap-6 mb-20 md:mb-12 lg:mb-16 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -127,10 +127,14 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in" style={{ animationDelay: "1.5s" }}>
-        <button onClick={() => scrollToSection("projects")} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-10 xl:bottom-12 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in pointer-events-auto" style={{ animationDelay: "1.5s" }}>
+        <button 
+          onClick={() => scrollToSection("projects")} 
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors p-2"
+          aria-label="Scroll to projects section"
+        >
           <span className="font-mono text-xs">scroll</span>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
+          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" />
         </button>
       </div>
     </section>
