@@ -35,7 +35,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 md:py-0">
+    <section className="relative min-h-screen flex items-center md:items-start justify-center overflow-hidden py-12 md:py-0 md:pt-24 pb-16 md:pb-20">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       
@@ -55,7 +55,7 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-8 md:pt-0">
+      <div className="container mx-auto px-6 relative z-10 pt-8 md:pt-8">
         <div className="max-w-4xl mx-auto text-center">
           {/* Terminal-style greeting */}
           <div className="inline-block mb-3 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -109,7 +109,7 @@ export function HeroSection() {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center gap-6 mb-20 md:mb-0 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+          <div className="flex justify-center gap-6 mb-20 md:mb-16 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -127,10 +127,10 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in" style={{ animationDelay: "1.5s" }}>
-        <button onClick={() => scrollToSection("projects")} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-          <span className="font-mono text-xs">scroll</span>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in" style={{ animationDelay: "1.5s" }}>
+        <button onClick={() => scrollToSection("projects")} className="flex flex-col items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-primary transition-colors whitespace-nowrap">
+          <span className="font-mono text-xs leading-tight">scroll</span>
+          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" />
         </button>
       </div>
     </section>
