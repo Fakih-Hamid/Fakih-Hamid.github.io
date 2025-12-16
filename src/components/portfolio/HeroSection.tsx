@@ -11,7 +11,7 @@ const socialLinks = [
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "AI × Cybersecurity × Human Behavior";
+  const fullText = "AI × Cybersecurity";
 
   useEffect(() => {
     let index = 0;
