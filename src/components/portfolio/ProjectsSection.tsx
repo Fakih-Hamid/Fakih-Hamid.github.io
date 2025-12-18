@@ -38,10 +38,10 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Fakih-Hamid/Overwatch-Cheat-Detection",
   },
   {
-    title: "Sentinel Security Dashboard",
-    description: "Interactive front-end dashboard simulating live security monitoring with WebSocket alerts, analytics charts, and player risk profiles.",
-    tech: ["React", "WebSocket", "Chart.js"],
-    githubUrl: "https://github.com/Fakih-Hamid/sentinel-security-dashboard",
+    title: "Game-RL-Lab",
+    description: "Research-oriented reinforcement learning experiments combining a PPO-based agent with a custom grid-based game environment, focusing on adaptive decision-making and reward design using PyTorch.",
+    tech: ["Python", "PyTorch", "Reinforcement Learning"],
+    githubUrl: "https://github.com/Fakih-Hamid/Game-RL-Lab",
   },
   {
     title: "Data Mining Project",
