@@ -8,11 +8,6 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    icon: Code2,
-    title: "Languages",
-    skills: ["Python", "C++", "C", "C#", "Java", "JavaScript", "TypeScript"],
-  },
-  {
     icon: Cpu,
     title: "AI / ML",
     skills: ["PyTorch", "scikit-learn", "Pandas", "TensorFlow", "LLMs"],
@@ -21,6 +16,11 @@ const skillCategories: SkillCategory[] = [
     icon: Shield,
     title: "Security",
     skills: ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Fuzzing"],
+  },
+  {
+    icon: Code2,
+    title: "Languages",
+    skills: ["Python", "C++", "C", "C#", "Java", "JavaScript", "TypeScript"],
   },
   {
     icon: Database,
@@ -41,19 +41,31 @@ const skillCategories: SkillCategory[] = [
 
 function SkillCard({ category, index }: { category: SkillCategory; index: number }) {
   const Icon = category.icon;
+  const isFrontend = category.title === "Frontend";
+  const isEmphasized = category.title === "AI / ML" || category.title === "Security";
   
   return (
     <div
-      className="group relative p-6 bg-card border border-border rounded-lg transition-all duration-300 hover:border-primary hover:shadow-[0_0_30px_hsl(168_100%_50%/0.15)] opacity-0 animate-fade-in-up"
+      className={`group relative p-6 bg-card border rounded-lg transition-all duration-300 hover:border-primary hover:shadow-[0_0_30px_hsl(168_100%_50%/0.15)] opacity-0 animate-fade-in-up ${
+        isFrontend ? "border-border/50 opacity-90" : "border-border"
+      } ${isEmphasized ? "border-primary/30" : ""}`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {/* Icon */}
-      <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10 border border-primary/20 text-primary transition-all group-hover:scale-110 group-hover:shadow-[0_0_20px_hsl(168_100%_50%/0.3)]">
-        <Icon className="w-6 h-6" />
+      <div className={`inline-flex items-center justify-center mb-4 rounded-lg border text-primary transition-all group-hover:scale-110 group-hover:shadow-[0_0_20px_hsl(168_100%_50%/0.3)] ${
+        isFrontend 
+          ? "w-10 h-10 bg-primary/5 border-primary/10" 
+          : isEmphasized
+          ? "w-12 h-12 bg-primary/15 border-primary/30"
+          : "w-12 h-12 bg-primary/10 border-primary/20"
+      }`}>
+        <Icon className={isFrontend ? "w-5 h-5" : "w-6 h-6"} />
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+      <h3 className={`font-bold mb-4 group-hover:text-primary transition-colors ${
+        isFrontend ? "text-lg text-muted-foreground" : isEmphasized ? "text-xl text-foreground" : "text-lg text-foreground"
+      }`}>
         {category.title}
       </h3>
 
@@ -62,7 +74,11 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
         {category.skills.map((skill) => (
           <span
             key={skill}
-            className="px-3 py-1.5 text-sm font-mono text-muted-foreground bg-muted rounded-md border border-border transition-colors group-hover:border-primary/30 group-hover:text-foreground"
+            className={`px-3 py-1.5 text-sm font-mono rounded-md border transition-colors group-hover:border-primary/30 group-hover:text-foreground ${
+              isFrontend
+                ? "text-muted-foreground/70 bg-muted/50 border-border/50"
+                : "text-muted-foreground bg-muted border-border"
+            }`}
           >
             {skill}
           </span>
@@ -71,7 +87,9 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
 
       {/* Corner decoration */}
       <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-        <div className="absolute top-4 right-[-20px] w-20 h-px bg-gradient-to-l from-transparent via-primary/50 to-transparent rotate-45 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className={`absolute top-4 right-[-20px] w-20 h-px bg-gradient-to-l from-transparent via-primary/50 to-transparent rotate-45 transition-opacity ${
+          isFrontend ? "opacity-0" : "opacity-0 group-hover:opacity-100"
+        }`} />
       </div>
     </div>
   );

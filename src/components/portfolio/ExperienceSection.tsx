@@ -19,9 +19,9 @@ const timeline: TimelineItem[] = [
     period: "April 2025 - Present",
     current: true,
     description: [
-      "Researching AI-driven cybersecurity frameworks combining user behavior analysis, adaptive learning, gamification, and privacy-preserving design",
-      "Developing an offline Flask-based AI system with local LLMs and ML modules to enhance cybersecurity awareness",
-      "Applying data analysis and anomaly detection to understand decision-making under simulated cyber-attacks",
+      "Designing AI-driven cybersecurity frameworks that integrate user behavior analysis, adaptive learning, gamification, and privacy-preserving architectures",
+      "Implementing offline Flask-based AI systems with local LLMs and ML modules to enhance cybersecurity awareness and training effectiveness",
+      "Analyzing decision-making patterns and evaluating anomaly detection mechanisms in simulated cyber-attack scenarios",
     ],
   },
   {
@@ -32,8 +32,8 @@ const timeline: TimelineItem[] = [
     period: "2024 - Present",
     current: true,
     description: [
-      "Specializing in AI and cybersecurity research",
-      "Focus on privacy-preserving machine learning and behavioral analysis",
+      "Specializing in AI and cybersecurity research methodologies",
+      "Focusing on privacy-preserving machine learning architectures and behavioral analysis techniques",
     ],
   },
   {
@@ -43,9 +43,9 @@ const timeline: TimelineItem[] = [
     orgUrl: "https://carredor.ci/",
     period: "July 2023 - April 2024",
     description: [
-      "Maintained and optimized network and server infrastructure, improving reliability and uptime",
-      "Diagnosed vulnerabilities in ERP environments, reducing downtime and streamlining workflows",
-      "Managed virtualization (Hyper-V) and strengthened firewall/VPN configurations",
+      "Optimizing network and server infrastructure to improve reliability and uptime metrics",
+      "Analyzing and diagnosing vulnerabilities in ERP environments to reduce downtime and streamline workflows",
+      "Implementing virtualization solutions (Hyper-V) and strengthening firewall/VPN security configurations",
     ],
   },
   {
@@ -55,9 +55,9 @@ const timeline: TimelineItem[] = [
     orgUrl: "https://iugb.edu.ci/",
     period: "September 2020 - May 2023",
     description: [
-      "Major in Computer Science with focus on Technology",
-      "Active participation in the Club of Technology",
-      "Engaged in the STEM Department activities",
+      "Majoring in Computer Science with focus on Technology and systems design",
+      "Participating in the Club of Technology to develop practical technical skills",
+      "Engaging in STEM Department activities and collaborative research projects",
     ],
   },
 ];

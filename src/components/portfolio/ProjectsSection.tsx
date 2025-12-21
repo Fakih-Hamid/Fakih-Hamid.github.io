@@ -12,23 +12,23 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Pridwen AI Framework",
-    description: "Offline-first cybersecurity education framework powered by local LLMs. Features scenario-based training, adaptive AI guidance, gamified progression, and full on-device data handling for privacy.",
+    description: "Offline-first cybersecurity education framework powered by local LLMs. Features scenario-based training, adaptive AI guidance, gamified progression, and full on-device data handling for privacy. Research focus: enabling privacy-preserving, interactive cybersecurity training that adapts to individual learning patterns.",
     tech: ["Python", "Flask", "PyTorch", "LLM", "Cybersecurity"],
     githubUrl: "https://github.com/Fakih-Hamid/Pridwen-AI-Framework",
     featured: true,
   },
   {
-    title: "C++ Security Tool",
-    description: "Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20.",
-    tech: ["C++", "Windows API", "GoogleTest"],
-    githubUrl: "https://github.com/Fakih-Hamid/Security-tool",
+    title: "Autonomous Fuzzer & Guard Sandbox",
+    description: "Mono-repository combining intelligent fuzzing pipeline with coverage feedback, mutators, and a declarative guard sandbox with YAML-based policies. Research focus: automated vulnerability discovery and policy-driven security enforcement for real-world systems.",
+    tech: ["Python", "Fuzzing", "Security"],
+    githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
     featured: true,
   },
   {
-    title: "Autonomous Fuzzer & Guard Sandbox",
-    description: "Mono-repository combining intelligent fuzzing pipeline with coverage feedback, mutators, and a declarative guard sandbox with YAML-based policies.",
-    tech: ["Python", "Fuzzing", "Security"],
-    githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
+    title: "C++ Security Tool",
+    description: "Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20. Research focus: low-level security mechanisms for detecting and preventing runtime manipulation in production environments.",
+    tech: ["C++", "Windows API", "GoogleTest"],
+    githubUrl: "https://github.com/Fakih-Hamid/Security-tool",
     featured: true,
   },
   {

@@ -11,7 +11,7 @@ const socialLinks = [
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "AI × Cybersecurity";
+  const fullText = "Human-Centered Cybersecurity powered by AI";
 
   useEffect(() => {
     let index = 0;
@@ -86,9 +86,7 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 md:mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-            At the Cyber-Resilience Lab (NAIST), my research involves privacy-friendly AI systems that combine local LLMs, 
-            machine learning, behavioral analytics, gamification, and adaptive feedback loops. Outside research, I enjoy 
-            pentesting, game security and anti-cheat engineering, data mining, and developing experimental tools and prototypes.
+            I research privacy-preserving, offline-first cybersecurity systems that combine AI, behavioral analysis, and interactive environments to improve human resilience against real-world threats.
           </p>
 
           {/* CTA Buttons */}
