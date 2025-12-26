@@ -45,6 +45,12 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
   },
   {
+    title: "Game-RL-Lab",
+    description: "Research-oriented reinforcement learning experiments combining a PPO-based agent with a custom grid-based game environment, focusing on adaptive decision-making and reward design using PyTorch.",
+    tech: ["Python", "PyTorch", "Reinforcement Learning"],
+    githubUrl: "https://github.com/Fakih-Hamid/Game-RL-Lab",
+  },
+  {
     title: "Data Mining Project",
     description: "Data mining's impact on the Esports industry, extracting actionable insights from gameplay patterns and player behaviors in Overwatch.",
     tech: ["Python", "Pandas", "Data Mining"],
