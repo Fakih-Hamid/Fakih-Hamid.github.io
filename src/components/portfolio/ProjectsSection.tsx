@@ -39,10 +39,10 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Fakih-Hamid/Overwatch-Cheat-Detection",
   },
   {
-    title: "Game-RL-Lab",
-    description: "Research-oriented reinforcement learning experiments combining a PPO-based agent with a custom grid-based game environment, focusing on adaptive decision-making and reward design using PyTorch.",
-    tech: ["Python", "PyTorch", "Reinforcement Learning"],
-    githubUrl: "https://github.com/Fakih-Hamid/Game-RL-Lab",
+    title: "Project AEGIS",
+    description: "Offline AI Security Lab - autonomous fuzzer with guided coverage + policy sandbox that blocks data exfiltration.",
+    tech: ["Python", "Fuzzing", "Security"],
+    githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
   },
   {
     title: "Data Mining Project",

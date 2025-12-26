@@ -86,9 +86,8 @@ export function ContactSection() {
                   <span className="text-primary">$</span> cat message.txt
                 </p>
                 <p className="text-foreground leading-relaxed">
-                  I'm always interested in new opportunities, 
-                  collaborations, and discussions about AI, 
-                  cybersecurity, and innovative projects.
+                  I welcome collaborations and discussions around AI, 
+                  cybersecurity, and system-level security research.
                 </p>
               </div>
             </div>

@@ -19,7 +19,7 @@ const timeline: TimelineItem[] = [
     period: "April 2025 – Present",
     current: true,
     description: [
-      "Contributing to user-centered cybersecurity research projects",
+      "Contributing to Cybersecurity research projects",
       "Developing and evaluating experimental security systems in controlled environments",
       "Analyzing user behavior and system responses in simulated cyber-attack scenarios"
     ],
