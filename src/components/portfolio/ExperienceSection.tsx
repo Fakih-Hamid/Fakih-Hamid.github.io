@@ -14,38 +14,41 @@ const timeline: TimelineItem[] = [
   {
     type: "work",
     title: "Research Assistant",
-    organization: "Nara Institute of Science and Technology",
+    organization: "Nara Institute of Science and Technology (NAIST)",
     orgUrl: "https://www.naist.jp/",
-    period: "April 2025 - Present",
+    period: "April 2025 – Present",
     current: true,
     description: [
-      "Designing AI-driven cybersecurity frameworks that integrate user behavior analysis, adaptive learning, gamification, and privacy-preserving architectures",
-      "Implementing offline Flask-based AI systems with local LLMs and ML modules to enhance cybersecurity awareness and training effectiveness",
-      "Analyzing decision-making patterns and evaluating anomaly detection mechanisms in simulated cyber-attack scenarios",
+      "Contributing to user-centered cybersecurity research projects",
+      "Developing and evaluating experimental security systems in controlled environments",
+      "Analyzing user behavior and system responses in simulated cyber-attack scenarios"
     ],
   },
+  
+  
   {
     type: "education",
     title: "Master of Engineering in Information Science",
-    organization: "Nara Institute of Science and Technology",
+    organization: "Nara Institute of Science and Technology (NAIST)",
     orgUrl: "https://www.naist.jp/",
-    period: "2024 - Present",
+    period: "2024 – Present",
     current: true,
     description: [
-      "Specializing in AI and cybersecurity research methodologies",
-      "Focusing on privacy-preserving machine learning architectures and behavioral analysis techniques",
+      "Master’s program in Information Science with a research focus on cybersecurity",
+      "Conducting research at the Cyber-Resilience Laboratory"
     ],
   },
+  
   {
     type: "work",
     title: "IT Support Engineer",
-    organization: "Groupe Carré d'or",
+    organization: "Groupe Carré d'Or",
     orgUrl: "https://carredor.ci/",
-    period: "July 2023 - April 2024",
+    period: "July 2023 – April 2024",
     description: [
-      "Optimizing network and server infrastructure to improve reliability and uptime metrics",
-      "Analyzing and diagnosing vulnerabilities in ERP environments to reduce downtime and streamline workflows",
-      "Implementing virtualization solutions (Hyper-V) and strengthening firewall/VPN security configurations",
+      "Maintained and optimized network and server infrastructure to improve system reliability and uptime",
+      "Investigated operational and security issues in ERP environments, including troubleshooting SQL databases to identify and resolve data inconsistencies and system errors",
+      "Implemented virtualization solutions using Hyper-V and reinforced firewall and VPN configurations to strengthen network security"
     ],
   },
   {
@@ -55,9 +58,9 @@ const timeline: TimelineItem[] = [
     orgUrl: "https://iugb.edu.ci/",
     period: "September 2020 - May 2023",
     description: [
-      "Majoring in Computer Science with focus on Technology and systems design",
-      "Participating in the Club of Technology to develop practical technical skills",
-      "Engaging in STEM Department activities and collaborative research projects",
+      "Major in Computer Science ",
+      "Member of the IT Club  ",
+      "Participated in STEM department activities",
     ],
   },
 ];

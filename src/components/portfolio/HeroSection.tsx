@@ -11,7 +11,7 @@ const socialLinks = [
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Human-Centered Cybersecurity powered by AI";
+  const fullText = "Cybersecurity Researcher";
 
   useEffect(() => {
     let index = 0;
@@ -86,7 +86,8 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 md:mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-            I research privacy-preserving, offline-first cybersecurity systems that combine AI, behavioral analysis, and interactive environments to improve human resilience against real-world threats.
+          I am a master’s student and research assistant at the Cyber-Resilience Laboratory at NAIST, Japan. My current research explores how security awareness and resilience can be improved without relying on cloud-heavy or invasive data collection, while remaining effective across diverse user and cultural contexts.
+
           </p>
 
           {/* CTA Buttons */}
