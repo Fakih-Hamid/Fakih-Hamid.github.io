@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ffd9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00ffd9" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Terminal window -->
+  <rect x="100" y="150" width="500" height="300" fill="#0a0e1a" stroke="#00ffd9" stroke-width="3" rx="8"/>
+  
+  <!-- Terminal header -->
+  <rect x="100" y="150" width="500" height="40" fill="#1a1f2e" rx="8 8 0 0"/>
+  <circle cx="120" cy="170" r="6" fill="#ff4444"/>
+  <circle cx="140" cy="170" r="6" fill="#ffaa00"/>
+  <circle cx="160" cy="170" r="6" fill="#00ff88"/>
+  
+  <!-- Terminal content -->
+  <text x="120" y="220" font-family="monospace" font-size="24" fill="#00ffd9">$ whoami</text>
+  <text x="120" y="260" font-family="monospace" font-size="32" fill="#ffffff" font-weight="bold">Fakih Hamid</text>
+  <text x="120" y="300" font-family="monospace" font-size="20" fill="#ff00ff">&gt; AI × Cybersecurity</text>
+  
+  <!-- Main title -->
+  <text x="650" y="280" font-family="sans-serif" font-size="64" font-weight="bold" fill="url(#textGradient)">
+    AI &amp; Cybersecurity
+  </text>
+  <text x="650" y="340" font-family="sans-serif" font-size="48" fill="#ffffff" opacity="0.8">
+    Engineer
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="1000" cy="200" r="80" fill="none" stroke="#00ffd9" stroke-width="2" opacity="0.3"/>
+  <circle cx="1000" cy="200" r="60" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.3"/>
+  <circle cx="1000" cy="200" r="40" fill="none" stroke="#00ffd9" stroke-width="2" opacity="0.5"/>
+</svg>
+
