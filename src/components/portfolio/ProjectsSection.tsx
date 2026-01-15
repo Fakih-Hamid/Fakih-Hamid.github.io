@@ -50,12 +50,6 @@ const projects: Project[] = [
     tech: ["Python", "PyTorch", "Reinforcement Learning"],
     githubUrl: "https://github.com/Fakih-Hamid/Game-RL-Lab",
   },
-  {
-    title: "Data Mining Project",
-    description: "Data mining's impact on the Esports industry, extracting actionable insights from gameplay patterns and player behaviors in Overwatch.",
-    tech: ["Python", "Pandas", "Data Mining"],
-    githubUrl: "https://github.com/Fakih-Hamid/Data-Mining-Project",
-  },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
