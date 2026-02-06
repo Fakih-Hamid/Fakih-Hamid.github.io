@@ -14,7 +14,7 @@ const projects: Project[] = [
   {
     title: "Pridwen AI Framework",
     description: "Research-oriented project exploring user-centered approaches to cybersecurity awareness and digital resilience, focusing on privacy, usability, and engagement-oriented security education. Repository is currently private.",
-    tech: ["Python", "PyTorch", "Flask" , "Human-Centered Security", "Privacy-Preserving Systems", "Digital Resilience"],
+    tech: ["Python", "PyTorch", "Flask" , "Human-Centered Security"],
     githubUrl: "https://github.com/Fakih-Hamid/Pridwen-AI-Framework",
     featured: true,
   },
@@ -23,7 +23,7 @@ const projects: Project[] = [
   {
     title: "C++ Security Tool",
     description: "Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20.",
-    tech: ["C++", "Windows Internals", "Memory Analysis", "Process Integrity"],
+    tech: ["C++", "Memory Analysis", "Process Integrity"],
     githubUrl: "https://github.com/Fakih-Hamid/Security-tool",
     featured: true,
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: "Sentinel Security Dashboard",
     description:
       "Interactive security operations dashboard exploring how modern monitoring consoles visualize alerts, signals, and risk indicators, emphasizing real-time handling, anomaly visualization, and resilient architectures.",
-    tech: ["TypeScript", "React", "Security Visualization", "Real-Time Systems"],
+    tech: ["TypeScript", "React"],
     githubUrl: "https://github.com/Fakih-Hamid/sentinel-security-dashboard",
   },
   {
