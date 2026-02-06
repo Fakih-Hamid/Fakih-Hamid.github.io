@@ -18,13 +18,7 @@ const projects: Project[] = [
     featured: true,
   },
   
-  {
-    title: "Autonomous Fuzzer & Guard Sandbox",
-    description: "Mono-repository combining intelligent fuzzing pipeline with coverage feedback, mutators, and a declarative guard sandbox with YAML-based policies.",
-    tech: ["Python", "Fuzzing", "Security"],
-    githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
-    featured: true,
-  },
+  
   {
     title: "C++ Security Tool",
     description: "Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20.",
@@ -33,10 +27,11 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Overwatch Cheat Detection",
-    description: "End-to-end cheat detection pipeline using synthetic Overwatch telemetry. Combines statistical analysis, behavioral clustering, and ML models.",
-    tech: ["Python", "ML", "Isolation Forest", "Random Forest"],
-    githubUrl: "https://github.com/Fakih-Hamid/Overwatch-Cheat-Detection",
+    title: "Sentinel Security Dashboard",
+    description:
+      "Interactive security operations dashboard designed to explore how modern monitoring consoles visualize security signals, alerts, and risk indicators. Focuses on real-time data handling, anomaly visualization, and resilient front-end architectures with mock fallback support.",
+    tech: ["React", "TypeScript", "Vite", "Security"],
+    githubUrl: "https://github.com/Fakih-Hamid/sentinel-security-dashboard",
   },
   {
     title: "Project AEGIS",
@@ -45,7 +40,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
   },
   {
-    title: "Game-RL-Lab",
+    title: "RL-Lab",
     description: "Research-oriented reinforcement learning experiments combining a PPO-based agent with a custom grid-based game environment, focusing on adaptive decision-making and reward design using PyTorch.",
     tech: ["Python", "PyTorch", "Reinforcement Learning"],
     githubUrl: "https://github.com/Fakih-Hamid/Game-RL-Lab",
