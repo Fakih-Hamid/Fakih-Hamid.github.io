@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { ExternalLink, Github, Folder } from "lucide-react";
 
 interface Project {
@@ -13,7 +14,7 @@ const projects: Project[] = [
   {
     title: "Pridwen AI Framework",
     description: "Research-oriented project exploring user-centered approaches to cybersecurity awareness and digital resilience, focusing on privacy, usability, and engagement-oriented security education. Repository is currently private.",
-    tech: ["Python", "Flask", "PyTorch", "LLM", "Cybersecurity"],
+    tech: ["Python", "PyTorch", "Flask" , "Human-Centered Security", "Privacy-Preserving Systems", "Digital Resilience"],
     githubUrl: "https://github.com/Fakih-Hamid/Pridwen-AI-Framework",
     featured: true,
   },
@@ -22,7 +23,7 @@ const projects: Project[] = [
   {
     title: "C++ Security Tool",
     description: "Windows-focused anti-cheat demonstrator featuring memory pattern scanning, process integrity monitoring, and real-time detections via modern C++20.",
-    tech: ["C++", "Windows API", "GoogleTest"],
+    tech: ["C++", "Windows Internals", "Memory Analysis", "Process Integrity"],
     githubUrl: "https://github.com/Fakih-Hamid/Security-tool",
     featured: true,
   },
@@ -30,19 +31,19 @@ const projects: Project[] = [
     title: "Sentinel Security Dashboard",
     description:
       "Interactive security operations dashboard exploring how modern monitoring consoles visualize alerts, signals, and risk indicators, emphasizing real-time handling, anomaly visualization, and resilient architectures.",
-    tech: ["React", "TypeScript", "Vite", "Security"],
+    tech: ["TypeScript", "React", "Security Visualization", "Real-Time Systems"],
     githubUrl: "https://github.com/Fakih-Hamid/sentinel-security-dashboard",
   },
   {
     title: "Project AEGIS",
     description: "Offline AI Security Lab - autonomous fuzzer with guided coverage + policy sandbox that blocks data exfiltration.",
-    tech: ["Python", "Fuzzing", "Security"],
+    tech: ["Python", "Autonomous Security", "Fuzzing", "Sandboxing"],
     githubUrl: "https://github.com/Fakih-Hamid/project-aegis",
   },
   {
     title: "RL-Lab",
     description: "Research-oriented reinforcement learning experiments combining a PPO-based agent with a custom grid-based game environment, focusing on adaptive decision-making and reward design using PyTorch.",
-    tech: ["Python", "PyTorch", "Reinforcement Learning"],
+    tech: ["Python", "PyTorch", "Reinforcement Learning", "Policy Optimization"],
     githubUrl: "https://github.com/Fakih-Hamid/Game-RL-Lab",
   },
 ];
@@ -136,7 +137,9 @@ export function ProjectsSection() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <Fragment key={project.title}>
+              <ProjectCard project={project} index={index} />
+            </Fragment>
           ))}
         </div>
 
