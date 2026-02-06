@@ -29,7 +29,7 @@ const projects: Project[] = [
   {
     title: "Sentinel Security Dashboard",
     description:
-      "Interactive security operations dashboard designed to explore how modern monitoring consoles visualize security signals, alerts, and risk indicators. Focuses on real-time data handling, anomaly visualization, and resilient front-end architectures with mock fallback support.",
+      "Interactive security operations dashboard exploring how modern monitoring consoles visualize alerts, signals, and risk indicators, emphasizing real-time handling, anomaly visualization, and resilient architectures.",
     tech: ["React", "TypeScript", "Vite", "Security"],
     githubUrl: "https://github.com/Fakih-Hamid/sentinel-security-dashboard",
   },
