@@ -12,7 +12,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Pridwen AI Framework",
+    title: "Predwen AI Framework",
     description: "Research-oriented project exploring user-centered approaches to cybersecurity awareness and digital resilience, focusing on privacy, usability, and engagement-oriented security education. Repository is currently private.",
     tech: ["Python", "PyTorch", "Flask" , "Human-Centered Security"],
     githubUrl: "https://github.com/Fakih-Hamid/Pridwen-AI-Framework",
