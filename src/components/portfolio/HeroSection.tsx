@@ -86,8 +86,7 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 md:mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-          I am a master's student and research assistant at the Cyber-Resilience Laboratory at NAIST, Japan. My research focuses on privacy-preserving and user-centered approaches to cybersecurity education and digital resilience, with an emphasis on real-world applicability.
-
+          I am a Master’s student and Research Assistant at the Cyber-Resilience Laboratory at NAIST, Japan. My research focuses on privacy-preserving and user-centered approaches to cybersecurity education. In my free time, I actively engage in hands-on security practice, including penetration testing, security experimentation, and application development.
           </p>
 
           {/* CTA Buttons */}
