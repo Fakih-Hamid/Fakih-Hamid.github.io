@@ -86,7 +86,7 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 md:mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-            I'm a Master’s student and Research Assistant at the Cyber-Resilience Laboratory. My current research interests revolve around user-centered approaches to cybersecurity education. In my free time, I actively engage in hands-on security practice, including penetration testing, security experimentation, and application development.
+            My current research interests revolve around user-centered approaches to cybersecurity education. In my free time, I actively engage in hands-on security practice, including penetration testing, security experimentation, and application development.
           </p>
 
           {/* CTA Buttons */}
