@@ -77,8 +77,8 @@ export function HeroSection() {
               </p>
               <p>
                 Before this, I completed a research internship at NAIST and a B.Sc. in Computer
-                Science. My other research interests include penetration testing, game security
-                (particularly cheat detection), and AI security.
+                Science. My other research interests include penetration testing, network
+                security, game security (particularly cheat detection), and AI security.
               </p>
             </div>
 

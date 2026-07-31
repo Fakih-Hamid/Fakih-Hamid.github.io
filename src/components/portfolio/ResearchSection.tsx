@@ -3,6 +3,7 @@ const interests = [
   "Privacy and cyber hygiene awareness",
   "AI-assisted Framework",
   "Penetration testing",
+  "Network security",
   "Game security, particularly cheat detection",
   "AI security",
 ];
