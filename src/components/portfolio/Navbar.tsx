@@ -22,7 +22,9 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        isScrolled
+        isMobileMenuOpen
+          ? "bg-background border-b border-border"
+          : isScrolled
           ? "bg-background/90 backdrop-blur-sm border-b border-border"
           : "bg-transparent border-b border-transparent"
       }`}
