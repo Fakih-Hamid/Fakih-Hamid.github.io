@@ -6,6 +6,7 @@ const interests = [
   "Network security",
   "Game security, particularly cheat detection",
   "AI security",
+  "Malware Analysis",
 ];
 
 interface Work {
