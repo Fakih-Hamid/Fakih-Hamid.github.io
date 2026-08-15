@@ -22,7 +22,7 @@ interface Work {
 const inProgress: Work[] = [
   {
     title:
-      "A Culturally-Responsive, AI-Assisted Framework for Cyber Hygiene and Privacy Awareness",
+      "A Privacy-Preserving Experimental Framework for Culturally Responsive, AI-Assisted Cyber Hygiene and Privacy Awareness in Non-IT Graduate Education",
     authors: "H. Fakih",
     venue: "Master's thesis, NAIST, in progress",
   },
