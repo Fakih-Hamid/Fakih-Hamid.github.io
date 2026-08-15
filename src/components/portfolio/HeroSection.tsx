@@ -72,10 +72,10 @@ export function HeroSection() {
                 >
                   Yuzo Taenaka
                 </a>
-                , my research focuses on the design, implementation, and experimental evaluation of a
-                privacy-preserving, AI-assisted cyber hygiene and privacy awareness system for non-IT
-                graduate students in Japan, integrating local LLM inference, randomized A/B assignment,
-                behavioral instrumentation, and controlled security-service integrations.
+                , my research investigates the impact of contextualization on cyber hygiene and
+                privacy awareness outcomes among non-IT graduate students, comparing contextualized
+                and generic interventions through a randomized, privacy-preserving experimental
+                platform with local LLM inference and behavioral instrumentation.
               </p>
               <p>
                 Before this, I completed a research internship at NAIST and a B.Sc. in Computer
