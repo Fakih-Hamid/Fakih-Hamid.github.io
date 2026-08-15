@@ -72,8 +72,10 @@ export function HeroSection() {
                 >
                   Yuzo Taenaka
                 </a>
-                , my research focuses on the design, implementation, and evaluation of an
-                AI-supported cyber hygiene awareness platform for non-IT graduate students.
+                , my research focuses on the design, implementation, and experimental evaluation of a
+                privacy-preserving, AI-assisted cyber hygiene and privacy awareness system for non-IT
+                graduate students in Japan, integrating local LLM inference, randomized A/B assignment,
+                behavioral instrumentation, and controlled security-service integrations.
               </p>
               <p>
                 Before this, I completed a research internship at NAIST and a B.Sc. in Computer
