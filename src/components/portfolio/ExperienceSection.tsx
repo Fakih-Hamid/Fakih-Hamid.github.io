@@ -17,7 +17,7 @@ const experience: TimelineItem[] = [
     orgUrl: "https://www.naist.jp/",
     period: "Apr 2025 – Present",
     description: [
-      "Engineering and evaluating a bilingual, privacy-preserving cyber hygiene and privacy awareness platform for non-IT graduate students in Japan, with local LLM inference, randomized A/B experimentation, server-side behavioral instrumentation, security-service API integration, and automated condition-parity validation.",
+      "Engineered and evaluated a bilingual, privacy-preserving cyber hygiene and privacy awareness platform for non-IT graduate students in Japan, with local LLM inference, randomized A/B experimentation, server-side behavioral instrumentation, security-service API integration, and automated condition-parity validation.",
       "Supported course delivery as a Teaching Assistant",
     ],
   },
