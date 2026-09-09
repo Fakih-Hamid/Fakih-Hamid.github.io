@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opt_size,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Academic light theme — warm paper, ink, one scholarly accent */
+    --background: 40 33% 99%;
+    --foreground: 222 24% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 24% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 24% 15%;
+
+    /* Scholarly blue — used for links and primary actions */
+    --primary: 219 56% 33%;
+    --primary-foreground: 40 33% 99%;
+
+    --secondary: 40 16% 94%;
+    --secondary-foreground: 222 24% 15%;
+
+    --muted: 40 16% 95%;
+    --muted-foreground: 222 10% 42%;
+
+    --accent: 40 16% 93%;
+    --accent-foreground: 222 24% 15%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 33% 99%;
+
+    --border: 38 14% 87%;
+    --input: 38 14% 84%;
+    --ring: 219 56% 33%;
+
+    --radius: 0.4rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "kern", "liga", "onum";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.14);
+    color: hsl(var(--foreground));
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* A quiet, readable measure for running prose */
+  .prose-measure {
+    max-width: 68ch;
+  }
+
+  /* Underlined scholarly link */
+  .link-underline {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: hsl(var(--primary) / 0.35);
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .link-underline:hover {
+    text-decoration-color: hsl(var(--primary));
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-rise {
+    animation: rise 0.6s ease-out forwards;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
