@@ -17,8 +17,11 @@ const experience: TimelineItem[] = [
     orgUrl: "https://www.naist.jp/",
     period: "Apr 2025 – Present",
     description: [
-      "Engineered and evaluated a bilingual, privacy-preserving cybersecurity awareness platform for non-IT graduate students in Japan, with local LLM inference, randomized A/B experimentation, server-side behavioral instrumentation, security-service API integration, and automated condition-parity validation.",
-      "Supported course delivery as a Teaching Assistant",
+      "Designed and built a bilingual cybersecurity awareness platform for non-IT graduate students in Japan, built around hands-on work with real security tools.",
+      "Ran it as a randomized experiment comparing two complete intervention packages, with automated condition-parity checks and server-side behavioral instrumentation.",
+      "Kept the study privacy-preserving by design: no directly identifying data, and an AI guide served by a local model.",
+      "Built and deployed a second, team-based platform for a one-day incident-investigation workshop: teams investigate a simulated software supply-chain compromise through OSINT, attacker infrastructure (RDAP, DNS, manifests), and host forensics mapped to MITRE ATT&CK, closing with an incident report.",
+      "Supported course delivery as a Teaching Assistant.",
     ],
   },
   {
@@ -28,7 +31,7 @@ const experience: TimelineItem[] = [
     orgUrl: "https://www.naist.jp/",
     period: "May 2024 – Mar 2025",
     description: [
-      "Built early prototypes and conducted a literature review on cybersecurity awareness",
+      "Built early prototypes and conducted a literature review on cybersecurity awareness.",
     ],
   },
 ];

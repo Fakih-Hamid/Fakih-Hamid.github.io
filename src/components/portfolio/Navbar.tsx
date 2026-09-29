@@ -35,7 +35,7 @@ export function Navbar() {
             onClick={() => scrollToSection("about")}
             className="font-serif text-lg font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
           >
-            Fakih Hamid
+            Fakih Abdel Hamid
           </button>
 
           {/* Desktop navigation */}

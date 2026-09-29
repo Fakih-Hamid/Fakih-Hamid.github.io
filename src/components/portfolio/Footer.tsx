@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Mail, href: "mailto:fakih-hamid@proton.me", label: "Email" },
+  { icon: Mail, href: "mailto:fakih.hamid_abdel.fj9@naist.ac.jp", label: "Email" },
   { icon: Github, href: "https://github.com/Fakih-Hamid", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/fakih-hamid/", label: "LinkedIn" },
 ];
@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto max-w-4xl px-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Fakih Hamid
+            © {new Date().getFullYear()} Fakih Abdel Hamid
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

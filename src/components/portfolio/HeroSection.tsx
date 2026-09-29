@@ -16,7 +16,7 @@ function OrcidIcon({ className }: { className?: string }) {
 }
 
 const links = [
-  { icon: Mail, href: "mailto:fakih-hamid@proton.me", label: "Email" },
+  { icon: Mail, href: "mailto:fakih.hamid_abdel.fj9@naist.ac.jp", label: "Email" },
   { icon: FileText, href: "#", label: "CV" },
   { icon: OrcidIcon, href: "https://orcid.org/0009-0008-2951-989X", label: "ORCID", external: true },
   { icon: Github, href: "https://github.com/Fakih-Hamid", label: "GitHub", external: true },
@@ -34,7 +34,7 @@ export function HeroSection() {
           {/* Bio */}
           <div className="flex-1">
             <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
-              Fakih Hamid
+              Fakih Abdel Hamid
             </h1>
             <p className="mt-3 text-lg text-muted-foreground">
               M2 student, M.Eng. in Information Science
@@ -125,7 +125,7 @@ export function HeroSection() {
               ) : (
                 <img
                   src="/profile.jpg"
-                  alt="Fakih Hamid"
+                  alt="Fakih Abdel Hamid"
                   onError={() => setImgError(true)}
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "40% 18%" }}

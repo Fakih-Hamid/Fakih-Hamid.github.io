@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 
 const contactLinks = [
-  { icon: Mail, label: "Email", value: "fakih-hamid@proton.me", href: "mailto:fakih-hamid@proton.me" },
+  { icon: Mail, label: "Email (NAIST)", value: "fakih.hamid_abdel.fj9@naist.ac.jp", href: "mailto:fakih.hamid_abdel.fj9@naist.ac.jp" },
+  { icon: Mail, label: "Email (personal)", value: "fakih-hamid@proton.me", href: "mailto:fakih-hamid@proton.me" },
   { icon: Github, label: "GitHub", value: "Fakih-Hamid", href: "https://github.com/Fakih-Hamid" },
   { icon: Linkedin, label: "LinkedIn", value: "fakih-hamid", href: "https://www.linkedin.com/in/fakih-hamid/" },
 ];
@@ -119,7 +120,7 @@ export function ContactSection() {
             )}
             {status === "error" && (
               <p className="text-sm text-destructive">
-                Something went wrong. Please email me directly at fakih-hamid@proton.me.
+                Something went wrong. Please email me directly at fakih.hamid_abdel.fj9@naist.ac.jp.
               </p>
             )}
           </form>

@@ -2,13 +2,15 @@ import type { ReactNode } from "react";
 
 const interests = [
   "Human-centered cybersecurity",
-  "Privacy and cyber hygiene awareness",
-  "AI-assisted Framework",
-  "Penetration testing",
+  "Security awareness education",
+  "Usable security and privacy",
+  "AI-assisted security education",
+  "Cultural contextualization",
   "Network security",
+  "Penetration testing",
   "Game security, particularly cheat detection",
   "AI security",
-  "Malware Analysis",
+  "Malware analysis",
 ];
 
 interface Work {
@@ -32,7 +34,7 @@ const inProgress: Work[] = [
         <strong>Contextualized and Generic</strong> Cybersecurity Awareness Education
       </>
     ),
-    authors: "H. Fakih",
+    authors: "Fakih, A. H.",
     venue: "Master's thesis, NAIST, in progress",
   },
 ];
@@ -56,10 +58,10 @@ export function ResearchSection() {
           </ul>
         </div>
 
-        {/* Publications / work in progress */}
+        {/* Work in progress */}
         <div className="mt-12">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-            Publications &amp; work in progress
+            Work in progress
           </h3>
 
           <ol className="mt-5 space-y-5">
